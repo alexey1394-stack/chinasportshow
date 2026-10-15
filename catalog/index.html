@@ -353,7 +353,10 @@ var LEAD = {kind:'yc', url:'https://functions.yandexcloud.net/d4e6ubis8ni2eanh5c
 var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
 (function () {
   var D = null, sel = {}, view = [], shown = 0, PAGE = 60, unlocked = false, phRank = null, EMB = null;
-  var копияВыбрана = '';   // выбранная метка «копия …»; общая для фильтра и адреса
+  var копияВыбрана = '';
+  // catalog/#podborka — с главной «Открыть подборку»; запоминаем до того, как фильтры перепишут адрес
+  var НА_ПОДБОРКУ = location.hash === '#podborka';
+  if (НА_ПОДБОРКУ) try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}   // выбранная метка «копия …»; общая для фильтра и адреса
   function память() {
     var v = null;
     try { v = localStorage.getItem('cat_ok'); } catch (e) {}
@@ -384,7 +387,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Метка сборки в адресе: без неё браузер держит вчерашний data.json, и человек
   // видит старые цены и старые фильтры (29.09.2026: новые метки копий не появились
   // у посетителя, хотя на сервере уже лежали).
-  fetch('data.json?v=202610151058', { cache: 'no-cache' })
+  fetch('data.json?v=202610151105', { cache: 'no-cache' })
     .then(function (r) { return r.json(); }).then(function (d) { D = d; init(); });
 
   function init() {
@@ -484,6 +487,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     apply(); tray();
     var чужая = изСсылки();
     if (чужая) окноКП(чужая, false);
+    else if (НА_ПОДБОРКУ) окноКП(sel, true);
   }
   function syncTog() {
     [].forEach.call(document.querySelectorAll('.tog'), function (b) {
@@ -860,7 +864,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202610151058', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202610151105', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
