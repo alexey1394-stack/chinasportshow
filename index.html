@@ -291,6 +291,14 @@ section{padding:96px 0}
 .jr__bg img.on{opacity:1;animation:jrKen 5s cubic-bezier(.2,.6,.3,1) forwards}
 .jr__bg img:nth-child(even).on{animation-name:jrKen2}
 .jr__bg .jr__scene.on{opacity:1}
+/* фильм по прокрутке (путь.js, 15.10.2026): блок встаёт на экран, обёртка даёт ход прокрутки */
+.jr-film{position:relative;margin-top:56px}
+.jr.is-film{position:sticky;top:0;margin-top:0;height:100vh;min-height:0}
+.jr__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:brightness(.92) contrast(1.04)}
+.jr.is-film .jr__bg img,.jr.is-film .jr__bg .jr__scene{display:none}
+.jr.is-film .jr__veil,.jr.is-film.is-scene .jr__veil{opacity:.62}
+.jr--facts{margin-top:0;min-height:0;padding:28px 0 48px}
 @keyframes jrKen{from{transform:scale(1.14) translateX(2.5%)}to{transform:scale(1.04) translateX(-1%)}}
 @keyframes jrKen2{from{transform:scale(1.14) translateX(-2.5%)}to{transform:scale(1.04) translateX(1%)}}
 .jr.is-scene .jr__veil{opacity:.45}
@@ -4007,6 +4015,7 @@ var $ = function (id) { return document.getElementById(id); };
 var bg = $('jrBg'), num = $('jrNum'), step = $('jrStep'), title = $('jrTitle'), text = $('jrText'),
     fee = $('jrFee'), feeV = $('jrFeeV'), feeN = $('jrFeeN'), road = $('jrRoad'), stops = $('jrStops');
 var N = S.length, DUR = 3600, cur = -1, timer = null, t0 = 0, left = DUR, paused = false, inView = false;
+var film = null;                          // режим «фильм по прокрутке» (см. ниже), только компьютер
 var SHORT = ['Завод', 'Партия', 'Упаковка', 'Контейнер', 'Выгрузка', 'Зал'];
 var TAG = ['выбор и осмотр', 'ваш заказ в цеху', 'ящики и кубы', 'море и таможня', 'ваш адрес', 'наши 15 %'];
 // тайминг: день пути на каждой станции и сколько занимает переход. Слово Алексея 13.09.2026:
@@ -4238,6 +4247,7 @@ function count15() {
 function fill() { return stops.children[cur] && stops.children[cur].firstChild; }
 function restart() {
   clearTimeout(timer); left = DUR; t0 = Date.now();
+  if (film) return;                         // в режиме фильма шаги ведёт прокрутка, не таймер
   if (inView && !paused) timer = setTimeout(next, DUR);
   var f = fill(); if (f) f.style.animationPlayState = (inView && !paused) ? 'running' : 'paused';
 }
@@ -4246,7 +4256,7 @@ function pause() {
   var f = fill(); if (f) f.style.animationPlayState = 'paused';
 }
 function resume() {
-  if (!inView || paused || timer) return;
+  if (film || !inView || paused || timer) return;
   t0 = Date.now(); timer = setTimeout(next, left);
   var f = fill(); if (f) f.style.animationPlayState = 'running';
 }
@@ -4297,6 +4307,7 @@ function endDrag(ev) {
   drag = null;
   road.classList.remove('is-drag');
   // отпустили — докатывается до ближайшей станции
+  if (goFilm) { goFilm(k); return; }
   var i = k; cur = -1; show(i);
   paused = false; restart();
 }
@@ -4312,7 +4323,8 @@ root.addEventListener('pointermove', function (ev) {
 });
 root.addEventListener('pointerleave', function () { bg.style.transform = ''; });
 
-function stepBy(d) { тронулись(); show((cur + d + N) % N); }
+function to(i) { i = (i + N) % N; if (goFilm) goFilm(i); else show(i); }
+function stepBy(d) { тронулись(); to(cur + d); }
 // первый же клик включает быстрый ход: человек показал, что хочет двигаться
 var БЫСТРО = 2100, разогнали = false;
 function тронулись() {
@@ -4334,10 +4346,10 @@ document.addEventListener('keydown', function (ev) {
 root.addEventListener('pointerdown', function () { paused = true; pause(); });
 document.addEventListener('pointerup', function () { paused = false; resume(); });
 stops.addEventListener('click', function (ev) {
-  var li = ev.target.closest('li'); if (li) { тронулись(); show(+li.dataset.i); }
+  var li = ev.target.closest('li'); if (li) { тронулись(); to(+li.dataset.i); }
 });
 road.addEventListener('click', function (ev) {
-  var c = ev.target.closest('.jr__st'); if (c) { тронулись(); show(+c.dataset.i); }
+  var c = ev.target.closest('.jr__st'); if (c) { тронулись(); to(+c.dataset.i); }
 });
 // клик по самому кадру — тоже «поехали дальше», а не мёртвая зона
 root.addEventListener('click', function (ev) {
@@ -4350,6 +4362,68 @@ if ('IntersectionObserver' in window) {
     if (inView) resume(); else pause();
   }, { threshold: 0.25 }).observe(root);
 } else inView = true;
+
+/* ── фильм по прокрутке (компьютер) ─────────────────────────────
+   Слово Алексея 15.10.2026: один фильм-полёт «от завода до зала», чтобы человек
+   сам мотал его вперёд и назад. Снят в Higgsfield (Kling 3.0) из наших фото —
+   шесть кусков, шесть шагов. Блок встаёт на экран (sticky), прокрутка страницы
+   ведёт время фильма; шаг, день, комиссия и тренажёр на дороге идут за кадром.
+   Телефон и «меньше движения» — прежняя лента из фото. Нет файла — тоже лента. */
+var goFilm = null;
+var FILM = { src: 'film/путь.mp4', poster: 'film/путь.jpg', cut: [0, 11.5, 20, 26.5, 35.5, 42.5] };
+if (window.matchMedia && matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)').matches) {
+  var fv = document.createElement('video');
+  fv.className = 'jr__film'; fv.muted = true; fv.playsInline = true; fv.preload = 'auto';
+  fv.setAttribute('muted', ''); fv.setAttribute('playsinline', ''); fv.setAttribute('aria-hidden', 'true');
+  fv.poster = FILM.poster;
+  fv.addEventListener('loadedmetadata', function () { startFilm(fv); }, { once: true });
+  fv.addEventListener('error', function () { fv.remove(); }, { once: true });
+  // файл целиком в память: так перемотка мгновенная на любом сервере (без докачки кусками)
+  fetch(FILM.src).then(function (r) { if (!r.ok) throw r.status; return r.blob(); })
+    .then(function (b) { fv.src = URL.createObjectURL(b); })
+    .catch(function () { fv.remove(); });
+  bg.appendChild(fv);
+}
+function startFilm(v) {
+  var D = v.duration; if (!D || !isFinite(D)) { v.remove(); return; }
+  var END = D - 0.05, CUT = FILM.cut;
+  film = v; clearTimeout(timer); timer = null;
+  // обёртка даёт высоту для прокрутки: ~80 % экрана на шаг
+  var box = document.createElement('div'); box.className = 'jr-film';
+  root.parentNode.insertBefore(box, root); box.appendChild(root);
+  box.style.height = (100 + 80 * N) + 'vh';
+  root.classList.add('is-film');
+  // цифры под лентой выносим под фильм, чтобы экран блока не переполнялся
+  var fw = root.querySelector('.jr__factswrap');
+  if (fw) { var fs = document.createElement('section'); fs.className = 'jr jr--facts'; fs.appendChild(fw); box.parentNode.insertBefore(fs, box.nextSibling); }
+  var hint = root.querySelector('.jr__hint'); if (hint) hint.textContent = 'листайте — фильм идёт за прокруткой';
+
+  function prog() { var r = box.getBoundingClientRect(), h = r.height - innerHeight; return h > 0 ? Math.min(1, Math.max(0, -r.top / h)) : 0; }
+  function stepAt(t) { var i = 0; for (var k = 1; k < N; k++) if (t >= CUT[k]) i = k; return i; }
+  function along(t) {                        // 0…N-1: где тренажёр на дороге в момент t
+    var i = stepAt(t); if (i >= N - 1) return N - 1;
+    return i + Math.min(1, (t - CUT[i]) / (CUT[i + 1] - CUT[i]));
+  }
+  var tgt = 0, now = 0, raf = 0;
+  function tick() {
+    raf = 0;
+    now += (tgt - now) * 0.2; if (Math.abs(tgt - now) < 0.01) now = tgt;
+    if (!v.seeking && Math.abs(v.currentTime - now) > 0.02) v.currentTime = now;
+    var i = stepAt(now); if (i !== cur) show(i, true);
+    placeCar(X0 + (X1 - X0) * along(now) / (N - 1));
+    if (now !== tgt) raf = requestAnimationFrame(tick);
+  }
+  function onScroll() { tgt = prog() * END; if (!raf) raf = requestAnimationFrame(tick); }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  // щелчок по шагу, стрелки, тренажёр рукой — прокручиваем страницу к нужному месту фильма
+  goFilm = function (i) {
+    i = Math.max(0, Math.min(N - 1, i));
+    var r = box.getBoundingClientRect(), t = Math.min(END, CUT[i] + 0.4);
+    scrollTo({ top: scrollY + r.top + (t / END) * (r.height - innerHeight), behavior: 'smooth' });
+  };
+  onScroll();
+}
 
 show(0);
 })();
