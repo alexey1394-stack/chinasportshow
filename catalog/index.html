@@ -190,6 +190,35 @@ a{color:inherit}
 .kp__acts{display:flex;gap:10px;flex-wrap:wrap}.kp__acts .btn{min-height:44px;font-size:13px;padding:0 16px}
 .kp__acts .btn.gh{background:transparent;color:var(--ink);border-color:rgba(108,112,118,.5)}
 .kp__st{font-size:13px;color:var(--graphite);min-height:1em}
+#kpPdf{position:fixed;left:-10000px;top:0;width:794px;z-index:-1}
+#kpPdf .pp{width:794px;height:1123px;background:#fff;color:#16181A;font-family:"Golos Text",Arial,sans-serif;font-size:13px;line-height:1.45;position:relative;overflow:hidden;box-sizing:border-box;padding:0 48px}
+#kpPdf .hd{background:#16181A;color:#EDEDE7;margin:0 -48px;padding:22px 48px;display:flex;align-items:center;gap:14px}
+#kpPdf .lg{width:44px;height:44px;background:#A87512;color:#16181A;font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+#kpPdf .hd b{font-family:Oswald,Impact,sans-serif;font-weight:600;font-size:18px;letter-spacing:.14em;display:block;line-height:1.1}
+#kpPdf .hd span{font-size:11px;color:#9A9EA3;letter-spacing:.06em}
+#kpPdf .hd i{margin-left:auto;font-style:normal;font-family:"JetBrains Mono",monospace;font-size:11px;color:#C8901F;text-align:right}
+#kpPdf h1{font-family:Oswald,Impact,sans-serif;font-weight:600;font-size:40px;text-transform:uppercase;margin:34px 0 4px;line-height:1}
+#kpPdf .sub{color:#6C7076;font-size:13px}
+#kpPdf .sm{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid #16181A;border-bottom:1px solid #D5D5CF;margin:22px 0 16px}
+#kpPdf .sm div{padding:12px 0}#kpPdf .sm small{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#6C7076}
+#kpPdf .sm b{font-family:Oswald,Impact,sans-serif;font-size:24px;font-weight:600}
+#kpPdf table{width:100%;border-collapse:collapse;font-size:12px}
+#kpPdf td{padding:6px 0;border-bottom:1px solid #E6E6E0;vertical-align:top}#kpPdf td.r{text-align:right;white-space:nowrap;padding-left:10px}
+#kpPdf td .a{font-family:"JetBrains Mono",monospace;font-size:10px;color:#6C7076}
+#kpPdf .wr{font-size:11.5px;line-height:1.5;border-left:3px solid #A87512;background:#F6F1E6;padding:10px 14px;margin:16px 0}
+#kpPdf .ln{font-size:12px;margin:10px 0}#kpPdf .ln a{color:#A87512;word-break:break-all}
+#kpPdf .ft{position:absolute;left:48px;right:48px;bottom:26px;border-top:1px solid #D5D5CF;padding-top:8px;font-size:9.5px;color:#6C7076;display:flex;justify-content:space-between;gap:20px}
+#kpPdf .cd{display:grid;grid-template-columns:250px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #D5D5CF;height:300px;box-sizing:border-box}
+#kpPdf .cd .fo{width:250px;height:250px;background:#F3F3EF;display:flex;align-items:center;justify-content:center}
+#kpPdf .cd .fo img{max-width:240px;max-height:240px;width:auto;height:auto;border:0;object-fit:contain}
+#kpPdf .cd .fo.no{font-size:11px;color:#6C7076;text-align:center;padding:20px}
+#kpPdf .cd .zc{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;color:#6C7076}
+#kpPdf .cd h3{font-family:Oswald,Impact,sans-serif;font-size:22px;font-weight:600;text-transform:uppercase;margin:4px 0 2px;line-height:1.1}
+#kpPdf .cd .en{color:#6C7076;font-size:12px}
+#kpPdf .cd dl{display:grid;grid-template-columns:110px 1fr;gap:3px 10px;margin:12px 0;font-size:12px}#kpPdf .cd dt{color:#6C7076}#kpPdf .cd dd{margin:0}
+#kpPdf .cd .pr{display:flex;align-items:baseline;gap:10px;border-top:1px solid #E6E6E0;padding-top:10px}
+#kpPdf .cd .pr b{font-family:Oswald,Impact,sans-serif;font-size:24px;font-weight:600;margin-left:auto}
+#kpPdf .pt{font-family:Oswald,Impact,sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7076;margin:22px 0 0}
 .kp__f{display:flex;gap:8px;flex-wrap:wrap}.kp__f[hidden]{display:none}.kp__f input[name=c]{flex:1;min-width:220px;min-height:44px;padding:0 12px;border:1px solid rgba(108,112,118,.5);background:transparent;color:var(--ink);font:inherit}
 .kp__f .btn{min-height:44px}.kp__f .agree{flex-basis:100%;display:flex;gap:8px;font-size:12.5px;color:var(--graphite)}.kp__f .agree input{width:18px;height:18px;flex:none}
 @media(max-width:560px){.kp{padding:22px 16px 18px}.kp__row{grid-template-columns:48px minmax(0,1fr);row-gap:6px}.kp__row img,.kp__row .np{width:48px;height:48px}.kp__q{grid-column:2}.kp__s{grid-column:2;text-align:left}.kp__tot>div{text-align:left!important}}
@@ -342,7 +371,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     // ?reset — забыть доступ (для проверки калитки: слово Алексея 22.09 «сразу показывает сайт»)
     if (/[?&]reset\b/.test(location.search)) { try { localStorage.removeItem('cat_ok'); document.cookie = 'cat_ok=; max-age=0; path=/'; } catch (e) {} }
     var k = (location.search.match(/[?&]k=(gt[a-z0-9]{6,})/) || [])[1];
-    if (k) { запомнить({ k: k, t: Date.now() }); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {} }
+    if (k) { запомнить({ k: k, t: Date.now() }); try { var кп_ = (location.search.match(/[?&](kp=[A-Za-z0-9_.\-]+)/) || [])[1]; history.replaceState(null, '', location.pathname + (кп_ ? '?' + кп_ : '') + location.hash); } catch (e) {} }
   })();
   unlocked = !!память();
   var $ = function (id) { return document.getElementById(id); };
@@ -355,7 +384,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Метка сборки в адресе: без неё браузер держит вчерашний data.json, и человек
   // видит старые цены и старые фильтры (29.09.2026: новые метки копий не появились
   // у посетителя, хотя на сервере уже лежали).
-  fetch('data.json?v=202610151003', { cache: 'no-cache' })
+  fetch('data.json?v=202610151058', { cache: 'no-cache' })
     .then(function (r) { return r.json(); }).then(function (d) { D = d; init(); });
 
   function init() {
@@ -640,6 +669,68 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // видишь ровно тот список; своя подборка от этого не меняется.
   var КП_КЛЮЧ = 'kp_sel', КОНТЕЙНЕР = 62;   // 40' загружаем на 62 м³ (слово Алексея 29.09.2026)
   var ОГОВОРКА = 'Цены ориентировочные и не являются публичной офертой (ст. 437 ГК РФ). Точная стоимость фиксируется только в коммерческом предложении после финального расчёта: курс на дату оплаты, объём и состав поставки, доставка до вашего города, таможенные платежи.';
+  // ── PDF подборки ──────────────────────────────────────────────
+  // Листы A4 рисуются обычной вёрсткой вне экрана, html2canvas снимает каждый лист,
+  // jsPDF складывает в файл. Библиотеки грузятся только по нажатию (≈ 600 КБ).
+  // Свой шрифт с кириллицей не нужен: в файл ложится картинка листа, ссылка — поверх кликабельной.
+  function грузи(src) {
+    return new Promise(function (ok, no) { var s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
+  }
+  function экр(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function вPDF(s, кнопка) {
+    var было = кнопка.textContent; кнопка.textContent = 'Готовим PDF…'; кнопка.disabled = true;
+    var ids = Object.keys(s).filter(byId), шт = 0, sum = 0, cbm = 0, ссылка = вСсылку(s);
+    ids.forEach(function (id) { var i = byId(id); шт += s[id]; sum += i.price * s[id]; cbm += (i.cbm || 0) * s[id]; });
+    var дата = new Date().toLocaleDateString('ru-RU'), курс = D.rate.date.split('-').reverse().join('.');
+    var листов = 1 + Math.ceil(ids.length / 3);
+    var шапка = '<div class="hd"><div class="lg">CSS</div><div><b>CHINA SPORT SHOW</b><span>тренажёры напрямую с фабрик Китая · цена завода + 15 %</span></div><i>ПОДБОРКА НА КП<br>' + дата + '</i></div>';
+    function подвал(n) { return '<div class="ft"><span>Цены ориентировочные, не являются публичной офертой (ст. 437 ГК РФ). Точная стоимость — в коммерческом предложении после финального расчёта.</span><span style="white-space:nowrap">chinasportshow.ru · 8 (915) 771-69-81 · ' + n + ' / ' + листов + '</span></div>'; }
+    var строки = ids.slice(0, 16).map(function (id) {
+      var i = byId(id), z = D.zavody.filter(function (z) { return z.code === i.z; })[0] || {};
+      return '<tr><td>' + экр(i.ru) + '<br><span class="a">' + экр(z.name) + ' · ' + экр(i.art) + '</span></td><td class="r">' + s[id] + ' шт</td><td class="r">' + fmt(i.price * s[id]) + ' ₽</td></tr>';
+    }).join('') + (ids.length > 16 ? '<tr><td colspan="3" style="color:#6C7076">… и ещё ' + (ids.length - 16) + ' поз. — на следующих листах</td></tr>' : '');
+    var листы = ['<div class="pp">' + шапка + '<h1>Подборка на КП</h1><div class="sub">Собрана на сайте ' + дата + ' · цены в Москве с НДС 22 % по курсу ЦБ на ' + курс + '</div>' +
+      '<div class="sm"><div><small>Позиций</small><b>' + ids.length + '</b></div><div><small>Штук</small><b>' + шт + '</b></div><div><small>Объём</small><b>' + cbm.toFixed(1).replace('.', ',') + ' м³</b></div><div><small>Ориентировочно</small><b>≈ ' + fmt(sum) + ' ₽</b></div></div>' +
+      '<table>' + строки + '</table>' +
+      '<div class="wr"><b>Цены ориентировочные и не являются публичной офертой (ст. 437 ГК РФ).</b> ' + ОГОВОРКА.replace(/^.*?\(ст\. 437 ГК РФ\)\. /, '') + ' В цене: доставка до Москвы, таможенное оформление, НДС 22 %. Отдельно: брокер, сборка, доставка по адресу. Объём подборки — ' + Math.round(cbm / КОНТЕЙНЕР * 100) + ' % контейнера 40′.</div>' +
+      '<div class="ln">Подборка на сайте: <a class="url" href="' + экр(ссылка) + '">' + экр(ссылка) + '</a></div>' +
+      '<div class="ln">Расчёт и вопросы: Telegram @china_sport_show · MAX и телефон 8 (915) 771-69-81</div>' + подвал(1) + '</div>'];
+    for (var k = 0; k < ids.length; k += 3) {
+      листы.push('<div class="pp">' + шапка + '<div class="pt">' + (Math.min(k + 3, ids.length) > k + 1 ? 'Позиции ' + (k + 1) + '–' + Math.min(k + 3, ids.length) : 'Позиция ' + (k + 1)) + ' из ' + ids.length + '</div>' + ids.slice(k, k + 3).map(function (id) {
+        var i = byId(id), z = D.zavody.filter(function (z) { return z.code === i.z; })[0] || {}, q = s[id];
+        return '<div class="cd">' + (i.nophoto ? '<div class="fo no">Фото уточняем у фабрики — пришлём вместе с расчётом</div>' : '<div class="fo"><img src="img/' + id + '.webp" alt=""></div>') +
+          '<div><div class="zc">' + экр(z.name) + ' · ' + экр(i.art) + '</div><h3>' + экр(i.ru) + '</h3>' + (i.en && i.en !== i.ru ? '<div class="en">' + экр(i.en) + '</div>' : '') +
+          '<dl>' + (i.dims && !i.unit ? '<dt>Габариты</dt><dd>' + экр(i.dims.replace(/\*/g, ' × ')) + ' мм</dd>' : '') + (i.kg ? '<dt>Вес</dt><dd>' + i.kg + ' кг</dd>' : '') + (i.cbm ? '<dt>Объём</dt><dd>' + String(i.cbm).replace('.', ',') + ' м³</dd>' : '') + '<dt>Цена за ' + (i.unit || 'шт') + '</dt><dd>≈ ' + fmt(i.price) + ' ₽</dd></dl>' +
+          '<div class="pr"><span>' + q + ' × ' + fmt(i.price) + ' ₽</span><b>≈ ' + fmt(i.price * q) + ' ₽</b></div></div></div>';
+      }).join('') + подвал(листы.length + 1) + '</div>');
+    }
+    var box = document.createElement('div'); box.id = 'kpPdf'; box.innerHTML = листы.join(''); document.body.appendChild(box);
+    var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/';
+    var готово = function () { box.remove(); кнопка.textContent = было; кнопка.disabled = false; };
+    Promise.all([window.html2canvas ? 0 : грузи(CDN + 'html2canvas/1.4.1/html2canvas.min.js'), window.jspdf ? 0 : грузи(CDN + 'jspdf/2.5.1/jspdf.umd.min.js')])
+      .then(function () {   // ждём фото, иначе на листе пустые рамки
+        return Promise.all([].map.call(box.querySelectorAll('img'), function (im) { return im.complete ? 0 : new Promise(function (ok) { im.onload = im.onerror = ok; }); }));
+      })
+      .then(function () { return document.fonts ? document.fonts.ready : 0; })
+      .then(function () {
+        var pdf = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true }), листыEl = box.querySelectorAll('.pp'), n = 0;
+        function следующий() {
+          if (n >= листыEl.length) { pdf.save('Подборка_CHINA_SPORT_SHOW_' + дата.replace(/\./g, '-') + '.pdf'); готово(); return; }
+          var el = листыEl[n];
+          return window.html2canvas(el, { scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false }).then(function (cv) {
+            if (n) pdf.addPage();
+            pdf.addImage(cv.toDataURL('image/jpeg', 0.86), 'JPEG', 0, 0, 210, 297);
+            if (n === 0) {   // ссылка на подборку — живая и в файле
+              var a = el.querySelector('a.url'), r0 = el.getBoundingClientRect(), r = a.getBoundingClientRect(), k = 210 / 794;
+              pdf.link((r.left - r0.left) * k, (r.top - r0.top) * k, r.width * k, r.height * k, { url: ссылка });
+            }
+            n++; return следующий();
+          });
+        }
+        return следующий();
+      })
+      .catch(function () { готово(); var st = document.getElementById('kpSt'); if (st) st.textContent = 'PDF не собрался — проверьте интернет и попробуйте ещё раз. Ссылку на подборку можно скопировать кнопкой выше.'; });
+  }
   function сохранить() { try { localStorage.setItem(КП_КЛЮЧ, JSON.stringify(sel)); } catch (e) {} }
   function вСсылку(s) {
     return location.origin + location.pathname + '?kp=' + Object.keys(s).map(function (id) { return id + (s[id] > 1 ? '_' + s[id] : ''); }).join('.');
@@ -686,6 +777,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
         '<div class="kp__acts">' +
           (unlocked ? '' : '<button class="btn" data-a="unlock">Открыть цены</button>') +
           '<button class="btn' + (unlocked ? '' : ' gh') + '" data-a="link">Скопировать ссылку</button>' +
+          '<button class="btn gh" data-a="pdf">Скачать PDF</button>' +
           '<button class="btn gh" data-a="mgr">Отправить менеджеру Alex</button>' +
         '</div><form class="kp__f" id="kpF" hidden novalidate><input name="c" placeholder="Телефон или @ник в Telegram" autocomplete="tel">' +
           '<button class="btn" type="submit">Отправить</button>' +
@@ -711,6 +803,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       if (a === 'link') скопировать(вСсылку(s), e.target, 'Скопировать ссылку');
       if (a === 'mgr') { var f = m.querySelector('#kpF'); f.hidden = false; try { var g = JSON.parse(localStorage.getItem('cat_ok') || '{}'); if (g.contact || g.phone) f.c.value = g.contact || g.phone; } catch (er) {} f.c.focus(); }
       if (a === 'unlock') { m.remove(); $('gate').hidden = false; }
+      if (a === 'pdf') { if (!unlocked) { m.remove(); $('gate').hidden = false; } else вPDF(s, e.target); }
     });
     m.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -767,7 +860,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202610151003', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202610151058', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
