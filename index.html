@@ -293,12 +293,17 @@ section{padding:96px 0}
 .jr__bg .jr__scene.on{opacity:1}
 /* фильм по прокрутке (путь.js, 15.10.2026): блок встаёт на экран, обёртка даёт ход прокрутки */
 .jr-film{position:relative;margin-top:56px}
-.jr.is-film{position:sticky;top:0;margin-top:0;height:100vh;min-height:0}
+.jr.is-film{position:sticky;top:0;margin-top:0;height:100vh;height:100svh;min-height:0}
 .jr__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   filter:brightness(.92) contrast(1.04)}
 .jr.is-film .jr__bg img,.jr.is-film .jr__bg .jr__scene{display:none}
 .jr.is-film .jr__veil,.jr.is-film.is-scene .jr__veil{opacity:.62}
 .jr--facts{margin-top:0;min-height:0;padding:28px 0 48px}
+@media(max-width:900px){
+  /* телефон: середина экрана — фильму; дата и пояснение к комиссии прячутся, вуаль только сверху и снизу */
+  .jr.is-film .jr__date,.jr.is-film .jr__fee small{display:none}
+  .jr.is-film .jr__veil{opacity:1;background:linear-gradient(180deg,rgba(22,24,26,.9) 0%,rgba(22,24,26,.55) 38%,rgba(22,24,26,.05) 62%,rgba(22,24,26,.85) 100%)}
+}
 @keyframes jrKen{from{transform:scale(1.14) translateX(2.5%)}to{transform:scale(1.04) translateX(-1%)}}
 @keyframes jrKen2{from{transform:scale(1.14) translateX(-2.5%)}to{transform:scale(1.04) translateX(1%)}}
 .jr.is-scene .jr__veil{opacity:.45}
@@ -4376,16 +4381,63 @@ if (window.matchMedia && matchMedia('(min-width: 900px) and (prefers-reduced-mot
   fv.className = 'jr__film'; fv.muted = true; fv.playsInline = true; fv.preload = 'auto';
   fv.setAttribute('muted', ''); fv.setAttribute('playsinline', ''); fv.setAttribute('aria-hidden', 'true');
   fv.poster = FILM.poster;
-  fv.addEventListener('loadedmetadata', function () { startFilm(fv); }, { once: true });
+  fv.addEventListener('loadedmetadata', function () {
+    startFilm(fv, fv.duration, function (t) { if (!fv.seeking && Math.abs(fv.currentTime - t) > 0.02) fv.currentTime = t; });
+  }, { once: true });
   fv.addEventListener('error', function () { fv.remove(); }, { once: true });
   // файл целиком в память: так перемотка мгновенная на любом сервере (без докачки кусками)
   fetch(FILM.src).then(function (r) { if (!r.ok) throw r.status; return r.blob(); })
     .then(function (b) { fv.src = URL.createObjectURL(b); })
     .catch(function () { fv.remove(); });
   bg.appendChild(fv);
+} else if (window.matchMedia && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  /* Телефон (слово Алексея 16.10.2026 — «покадровая лента»): видео на iPhone при прокрутке
+     дёргается, поэтому тот же фильм нарезан на 188 вертикальных кадров (film/m/001…188.webp,
+     4 кадра в секунду, ~2,3 МБ) и рисуется на холсте; между соседними кадрами — растворение. */
+  var MF = { dir: 'film/m/', n: 188, fps: 4, w: 360, h: 640 };
+  var cv = document.createElement('canvas');
+  cv.className = 'jr__film'; cv.width = MF.w; cv.height = MF.h; cv.setAttribute('aria-hidden', 'true');
+  var cx = cv.getContext('2d'), fr = new Array(MF.n), last = 0, started = false;
+  var draw = function (t) {
+    last = t;
+    var x = Math.max(0, Math.min(MF.n - 1, t * MF.fps)), a = Math.floor(x), b = Math.min(MF.n - 1, a + 1), f = x - a;
+    var i = a; while (i > 0 && !fr[i]) i--;
+    if (!fr[i]) return;
+    cx.globalAlpha = 1; cx.drawImage(fr[i], 0, 0, MF.w, MF.h);
+    if (i === a && fr[b] && f > 0.02) { cx.globalAlpha = f; cx.drawImage(fr[b], 0, 0, MF.w, MF.h); cx.globalAlpha = 1; }
+  };
+  // порядок загрузки: сначала каждый 8-й кадр (фильм сразу «есть» целиком), потом гуще
+  var order = [], seen = {};
+  [8, 4, 2, 1].forEach(function (st) { for (var k = 0; k < MF.n; k += st) if (!seen[k]) { seen[k] = 1; order.push(k); } });
+  var load = function () {
+    var busy = 0, pos = 0;
+    (function more() {
+      while (busy < 4 && pos < order.length) {
+        (function (k) {
+          busy++;
+          var im = new Image();
+          im.onload = function () {
+            fr[k] = im; busy--;
+            if (!started && k === 0) { started = true; bg.appendChild(cv); startFilm(cv, MF.n / MF.fps, draw); }
+            else if (started && Math.abs(k / MF.fps - last) < 2) draw(last);
+            more();
+          };
+          im.onerror = function () { busy--; if (k === 0) cv.remove(); else more(); };
+          im.src = MF.dir + ('00' + (k + 1)).slice(-3) + '.webp';
+        })(order[pos++]);
+      }
+    })();
+  };
+  // грузим, когда до блока остаётся пара экранов — не тратим мобильный трафик заранее
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { io.disconnect(); load(); }
+    }, { rootMargin: '1500px 0px' });
+    io.observe(root);
+  } else load();
 }
-function startFilm(v) {
-  var D = v.duration; if (!D || !isFinite(D)) { v.remove(); return; }
+function startFilm(v, D, seek) {
+  if (!D || !isFinite(D)) { v.remove(); return; }
   var END = D - 0.05, CUT = FILM.cut;
   film = v; clearTimeout(timer); timer = null;
   // обёртка даёт высоту для прокрутки: ~80 % экрана на шаг
@@ -4408,7 +4460,7 @@ function startFilm(v) {
   function tick() {
     raf = 0;
     now += (tgt - now) * 0.2; if (Math.abs(tgt - now) < 0.01) now = tgt;
-    if (!v.seeking && Math.abs(v.currentTime - now) > 0.02) v.currentTime = now;
+    seek(now);
     var i = stepAt(now); if (i !== cur) show(i, true);
     placeCar(X0 + (X1 - X0) * along(now) / (N - 1));
     if (now !== tgt) raf = requestAnimationFrame(tick);
