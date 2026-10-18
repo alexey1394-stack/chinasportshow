@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<meta charset="utf-8">
+<meta charset="utf-8"><!--EN--><script>try{if(/[?&]k=gt/.test(location.search)&&localStorage.getItem("lang")==="en")location.replace("/en/catalog/"+location.search+location.hash)}catch(e){}</script><!--/EN--><!--EN--><link rel="alternate" hreflang="ru" href="https://chinasportshow.ru/catalog/"><link rel="alternate" hreflang="en" href="https://chinasportshow.ru/en/catalog/"><link rel="alternate" hreflang="x-default" href="https://chinasportshow.ru/catalog/"><style>html .lng{display:inline-flex;align-items:center;gap:4px;font:500 12px/1 var(--f-m,monospace);letter-spacing:.06em;margin-left:14px;white-space:nowrap;flex:0 0 auto}html .top .lng b{color:var(--gold,#C9A227)}html .top .lng a{color:rgba(237,237,231,.72);text-decoration:none;padding:4px 2px}html .top .lng a:hover{color:var(--gold,#C9A227)}html .lng i{opacity:.35;font-style:normal}@media(min-width:1181px){html .top .nav .lo{display:none}html .top .nav{gap:16px}}@media(min-width:901px) and (max-width:1180px){html .top .burger{display:flex}html .top .top__in{gap:10px;flex-wrap:wrap}html .top .nav .lo{display:block}html .top .nav{display:none;order:10;flex:0 0 100%;width:100%;flex-direction:column;gap:0;margin:10px 0 0;background:var(--paper-2);border:1px solid var(--rule)}html .top .nav.on{display:flex}html .nav a,html .top .nav a{padding:13px 16px;font-size:13px;letter-spacing:.1em;border-bottom:1px solid var(--hair);color:var(--ink)}html .nav a:last-child{border-bottom:0}}@media(max-width:1180px){html .top .lng{margin-left:auto;margin-right:4px;font-size:13px}html .top .tel{margin-left:8px}}@media(max-width:900px){html .top .lng{margin-right:0}}</style><!--/EN-->
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png"><link rel="apple-touch-icon" href="../img/favicon-180.png">
 <title>Каталог оборудования · CHINA SPORT SHOW</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -298,7 +298,7 @@ a{color:inherit}
   <a class="brand" href="../"><img src="../img/css-знак.png" alt="CHINA SPORT SHOW"><b>China Sport<i>Show</i></b></a>
   <span class="ttl">Каталог · цена в Москве с НДС</span>
   <div class="search"><input id="q" type="search" placeholder="Поиск: дорожка, жим ногами, реформер, артикул…"><button type="button" class="cam" id="byPhoto" title="Загрузите фото тренажёра — покажем похожие" hidden>📷 По фото</button><input id="phFile" type="file" accept="image/*" hidden></div>
-  <a class="back" href="../">← Оборудование</a>
+  <!--EN--><span class="lng" id="lng"><b>RU</b><i>/</i><a href="/en/catalog/" hreflang="en" lang="en">EN</a></span><script>(function(){var a=document.querySelector("#lng a");if(a)a.addEventListener("click",function(){try{localStorage.setItem("lang","en")}catch(e){}a.href=a.getAttribute("href").split(/[?#]/)[0]+location.search+location.hash;});})();</script><!--/EN--><a class="back" href="../">← Оборудование</a>
   <a class="tel" href="tel:+79157716981">8 (915) 771-69-81</a>
 </div></header>
 
@@ -400,7 +400,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Метка сборки в адресе: без неё браузер держит вчерашний data.json, и человек
   // видит старые цены и старые фильтры (29.09.2026: новые метки копий не появились
   // у посетителя, хотя на сервере уже лежали).
-  fetch('data.json?v=202610181112', { cache: 'no-cache' })
+  fetch('data.json?v=202610181122', { cache: 'no-cache' })
     .then(function (r) { return r.json(); }).then(function (d) { D = d; init(); });
 
   function init() {
@@ -913,7 +913,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202610181112', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202610181122', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
