@@ -5,7 +5,7 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 8869 позиций, 68 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-17)
+## Каталог: 8853 позиций, 64 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-17)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
@@ -13,10 +13,10 @@
 - [Покрытие и маты](https://chinasportshow.ru/catalog/c/floor/) — 79 поз., от 760 ₽
 - [Аксессуары и детали](https://chinasportshow.ru/catalog/c/access/) — 178 поз., от 210 ₽
 - [Беговые дорожки](https://chinasportshow.ru/catalog/c/tread/) — 241 поз., от 42 400 ₽
-- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 67 поз., от 19 000 ₽
+- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 66 поз., от 76 200 ₽
 - [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 79 поз., от 17 000 ₽
 - [Тяги](https://chinasportshow.ru/catalog/c/row/) — 809 поз., от 7 100 ₽
-- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 151 поз., от 14 900 ₽
+- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 148 поз., от 21 900 ₽
 - [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 81 поз., от 86 700 ₽
 - [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 119 поз., от 7 000 ₽
 - [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 196 поз., от 9 600 ₽
@@ -32,7 +32,7 @@
 - [Диски и стеллажи](https://chinasportshow.ru/catalog/c/plate/) — 102 поз., от 180 ₽
 - [Рамы, стойки, помосты](https://chinasportshow.ru/catalog/c/rack/) — 211 поз., от 4 550 ₽
 - [Функциональный тренинг](https://chinasportshow.ru/catalog/c/func/) — 159 поз., от 1 470 ₽
-- [Прочее](https://chinasportshow.ru/catalog/c/other/) — 1394 поз., от 1 320 ₽
+- [Прочее](https://chinasportshow.ru/catalog/c/other/) — 1382 поз., от 1 320 ₽
 
 ### Фабрики
 - [Shuyoute (SYT)](https://chinasportshow.ru/catalog/f/A/): Шаньдун · коммерческое кардио, грузоблочные, свободный вес, пилатес (911 поз.)
@@ -92,14 +92,10 @@
 - [Zroll](https://chinasportshow.ru/catalog/f/ZROLL/): Сямэнь · гребные тренажёры (водные, магнитные) (10 поз.)
 - [New Noble](https://chinasportshow.ru/catalog/f/NEWNOBLE/): по каталогу фабрики · мультистанции и кроссоверы (2 поз.)
 - [Enkin](https://chinasportshow.ru/catalog/f/ENKIN/): Нинбо · спин-байки (7 поз.)
-- [NADA](https://chinasportshow.ru/catalog/f/NADA/): Сямэнь · гребные тренажёры (6 поз.)
 - [Core Deluxe](https://chinasportshow.ru/catalog/f/COREDELUXE/): по каталогу фабрики (4 поз.)
 - [Jingtop](https://chinasportshow.ru/catalog/f/JINGTOP/): по каталогу фабрики · ноги (5 поз.)
 - [MYDO](https://chinasportshow.ru/catalog/f/MYDO/): Сямэнь · коммерческие беговые дорожки (4 поз.)
-- [Ciapo](https://chinasportshow.ru/catalog/f/CIAPO/): Чжэцзян · беговые дорожки (4 поз.)
 - [Paidou](https://chinasportshow.ru/catalog/f/PAIDOU/): падел-корты (4 поз.)
-- [Keep Running](https://chinasportshow.ru/catalog/f/KEEPRUNNING/): Сямэнь · домашнее кардио (3 поз.)
-- [Bokang](https://chinasportshow.ru/catalog/f/BOKANG/): Сямэнь · домашние велотренажёры и эллипс (3 поз.)
 - [Fumeihua](https://chinasportshow.ru/catalog/f/FUMEIHUA/): шкафчики для раздевалок (1 поз.)
 - [Todo Fitness](https://chinasportshow.ru/catalog/f/TODOFITNESS/): по каталогу фабрики (1 поз.)
 - [Yozoe](https://chinasportshow.ru/catalog/f/I/) — премиум: Гуандун · пилатес и йога — оборудование студий (33 поз.)
