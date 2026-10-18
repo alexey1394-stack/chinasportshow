@@ -310,7 +310,12 @@ section{padding:96px 0}
 .jr__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   filter:brightness(.92) contrast(1.04)}
 .jr.is-film .jr__bg img,.jr.is-film .jr__bg .jr__scene{display:none}
-.jr.is-film .jr__veil,.jr.is-film.is-scene .jr__veil{opacity:.62}
+.jr.is-film .jr__veil,.jr.is-film.is-scene .jr__veil{opacity:1;
+  /* 18.10 по слову Алексея: на светлых кадрах (цех) текст шага тонул — слева и снизу плотнее, справа фильм светлый */
+  background:linear-gradient(90deg,rgba(18,20,22,.9) 0%,rgba(18,20,22,.8) 30%,rgba(18,20,22,.4) 58%,rgba(18,20,22,.12) 100%),
+             linear-gradient(0deg,rgba(18,20,22,.92) 0%,rgba(18,20,22,.5) 24%,rgba(18,20,22,0) 50%)}
+.jr.is-film .jr__title,.jr.is-film .jr__text,.jr.is-film .jr__eyebrow{text-shadow:0 2px 14px rgba(0,0,0,.65)}
+.jr.is-film .jr__date,.jr.is-film .jr__fee{background:rgba(18,20,22,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .jr--facts{margin-top:0;min-height:0;padding:28px 0 48px}
 @media(max-width:900px){
   /* телефон: середина экрана — фильму; дата и пояснение к комиссии прячутся, вуаль только сверху и снизу */
