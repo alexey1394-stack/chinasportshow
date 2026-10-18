@@ -4397,7 +4397,7 @@ if (window.matchMedia && matchMedia('(min-width: 900px) and (prefers-reduced-mot
   /* Телефон (слово Алексея 16.10.2026 — «покадровая лента»): видео на iPhone при прокрутке
      дёргается, поэтому тот же фильм нарезан на 188 вертикальных кадров (film/m/001…188.webp,
      4 кадра в секунду, 540×960, ~4,4 МБ (18.10 — крупнее по слову Алексея о качестве)) и рисуется на холсте; между соседними кадрами — растворение. */
-  var MF = { dir: 'film/m/', n: 188, fps: 4, w: 540, h: 960 };
+  var MF = { dir: '../film/m/', n: 188, fps: 4, w: 540, h: 960 };
   var cv = document.createElement('canvas');
   cv.className = 'jr__film'; cv.width = MF.w; cv.height = MF.h; cv.setAttribute('aria-hidden', 'true');
   var cx = cv.getContext('2d'), fr = new Array(MF.n), last = 0, started = false;
