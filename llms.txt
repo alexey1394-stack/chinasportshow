@@ -5,86 +5,56 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 7264 позиций, 51 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-20)
+## Каталог: 4778 позиций, 21 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-20)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
 ### Категории
-- [Покрытие и маты](https://chinasportshow.ru/catalog/c/floor/) — 58 поз., от 760 ₽
-- [Аксессуары и детали](https://chinasportshow.ru/catalog/c/access/) — 98 поз., от 210 ₽
-- [Беговые дорожки](https://chinasportshow.ru/catalog/c/tread/) — 227 поз., от 42 100 ₽
-- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 58 поз., от 75 600 ₽
-- [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 56 поз., от 19 100 ₽
-- [Тяги](https://chinasportshow.ru/catalog/c/row/) — 743 поз., от 7 000 ₽
-- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 124 поз., от 21 800 ₽
-- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 70 поз., от 86 000 ₽
-- [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 68 поз., от 13 400 ₽
-- [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 177 поз., от 9 500 ₽
-- [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 1331 поз., от 7 200 ₽
-- [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 285 поз., от 37 600 ₽
-- [Руки и плечи](https://chinasportshow.ru/catalog/c/arms/) — 489 поз., от 240 ₽
-- [Жимы](https://chinasportshow.ru/catalog/c/press/) — 896 поз., от 17 000 ₽
-- [Тяги](https://chinasportshow.ru/catalog/c/row/) — 743 поз., от 7 000 ₽
-- [Пресс и спина](https://chinasportshow.ru/catalog/c/core/) — 420 поз., от 8 800 ₽
-- [Скамьи](https://chinasportshow.ru/catalog/c/bench/) — 325 поз., от 7 900 ₽
-- [Мультистанции и кроссоверы](https://chinasportshow.ru/catalog/c/multi/) — 467 поз., от 2 200 ₽
-- [Гантели, грифы и стойки](https://chinasportshow.ru/catalog/c/dumb/) — 215 поз., от 210 ₽
-- [Диски и стеллажи](https://chinasportshow.ru/catalog/c/plate/) — 56 поз., от 180 ₽
-- [Рамы, стойки, помосты](https://chinasportshow.ru/catalog/c/rack/) — 153 поз., от 4 510 ₽
-- [Функциональный тренинг](https://chinasportshow.ru/catalog/c/func/) — 64 поз., от 1 460 ₽
-- [Прочее](https://chinasportshow.ru/catalog/c/other/) — 884 поз., от 1 310 ₽
+- [Покрытие и маты](https://chinasportshow.ru/catalog/c/floor/) — 43 поз., от 760 ₽
+- [Аксессуары и детали](https://chinasportshow.ru/catalog/c/access/) — 70 поз., от 210 ₽
+- [Беговые дорожки](https://chinasportshow.ru/catalog/c/tread/) — 152 поз., от 42 100 ₽
+- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 43 поз., от 75 600 ₽
+- [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 45 поз., от 19 100 ₽
+- [Тяги](https://chinasportshow.ru/catalog/c/row/) — 480 поз., от 7 000 ₽
+- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 92 поз., от 21 800 ₽
+- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 62 поз., от 86 000 ₽
+- [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 45 поз., от 13 400 ₽
+- [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 104 поз., от 9 500 ₽
+- [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 857 поз., от 7 200 ₽
+- [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 201 поз., от 37 600 ₽
+- [Руки и плечи](https://chinasportshow.ru/catalog/c/arms/) — 295 поз., от 240 ₽
+- [Жимы](https://chinasportshow.ru/catalog/c/press/) — 607 поз., от 17 000 ₽
+- [Тяги](https://chinasportshow.ru/catalog/c/row/) — 480 поз., от 7 000 ₽
+- [Пресс и спина](https://chinasportshow.ru/catalog/c/core/) — 279 поз., от 8 800 ₽
+- [Скамьи](https://chinasportshow.ru/catalog/c/bench/) — 213 поз., от 7 900 ₽
+- [Мультистанции и кроссоверы](https://chinasportshow.ru/catalog/c/multi/) — 330 поз., от 2 200 ₽
+- [Гантели, грифы и стойки](https://chinasportshow.ru/catalog/c/dumb/) — 173 поз., от 210 ₽
+- [Диски и стеллажи](https://chinasportshow.ru/catalog/c/plate/) — 39 поз., от 180 ₽
+- [Рамы, стойки, помосты](https://chinasportshow.ru/catalog/c/rack/) — 110 поз., от 4 510 ₽
+- [Функциональный тренинг](https://chinasportshow.ru/catalog/c/func/) — 31 поз., от 1 460 ₽
+- [Прочее](https://chinasportshow.ru/catalog/c/other/) — 507 поз., от 1 310 ₽
 
 ### Фабрики
 - [Shuyoute (SYT)](https://chinasportshow.ru/catalog/f/A/): Шаньдун · коммерческое кардио, грузоблочные, свободный вес, пилатес (839 поз.)
-- [MND Fitness](https://chinasportshow.ru/catalog/f/B/): Шаньдун · грузоблочные и нагружаемые машины, кардио, аксессуары (1247 поз.)
-- [Guwow](https://chinasportshow.ru/catalog/f/C/): Шаньдун · коммерческое кардио и грузоблочные, полная линейка (215 поз.)
-- [Juren (JR)](https://chinasportshow.ru/catalog/f/D/): Шаньдун · грузоблочные и нагружаемые машины, свободный вес (290 поз.)
+- [MND Fitness](https://chinasportshow.ru/catalog/f/B/): Шаньдун · грузоблочные и нагружаемые машины, кардио, аксессуары (1234 поз.)
+- [Guwow](https://chinasportshow.ru/catalog/f/C/): Шаньдун · коммерческое кардио и грузоблочные, полная линейка (213 поз.)
+- [Juren (JR)](https://chinasportshow.ru/catalog/f/D/): Шаньдун · грузоблочные и нагружаемые машины, свободный вес (281 поз.)
 - [Relax Fitness](https://chinasportshow.ru/catalog/f/H/) — премиум: Шаньдун · грузоблочные линейки, кардио (468 поз.)
-- [TZ Fitness (Tianzhan)](https://chinasportshow.ru/catalog/f/J/): Шаньдун, Дэчжоу · кардио, грузоблочные, нагружаемые, стойки и аксессуары (729 поз.)
+- [TZ Fitness (Tianzhan)](https://chinasportshow.ru/catalog/f/J/): Шаньдун, Дэчжоу · кардио, грузоблочные, нагружаемые, стойки и аксессуары (728 поз.)
 - [Brightway (BRTW)](https://chinasportshow.ru/catalog/f/K/): Шаньдун · грузоблочная серия TY (35 поз.)
-- [Langmai](https://chinasportshow.ru/catalog/f/M/): Шаньдун, Дэчжоу · кардио: дорожки, степперы-лестницы, эллипсы, велосипеды, гребные (45 поз.)
-- [Rosen (Shandong Rili)](https://chinasportshow.ru/catalog/f/N/) — премиум: Шаньдун · грузоблочные и нагружаемые линейки верхнего сегмента, кардио (204 поз.)
-- [MBH](https://chinasportshow.ru/catalog/f/MBH/): Шаньдун · грузоблочные линейки, рамы, мультистанции (619 поз.)
-- [Landfit](https://chinasportshow.ru/catalog/f/LANDFIT/): по каталогу фабрики · ноги, жимы, тяги (459 поз.)
-- [Likanglai](https://chinasportshow.ru/catalog/f/LIKANGLAI/): Дэчжоу · кардио, грузоблочные и нагружаемые линии, рамы, мультистанции (365 поз.)
-- [Infit](https://chinasportshow.ru/catalog/f/INFIT/): Циндао · свободный вес и аксессуары (28 поз.)
-- [Bodystrong](https://chinasportshow.ru/catalog/f/BODYSTRONG/): по каталогу фабрики · ноги, жимы, тяги (587 поз.)
-- [Changxu](https://chinasportshow.ru/catalog/f/CHANGXU/): по каталогу фабрики · жимы, ноги, руки и плечи (162 поз.)
-- [Realleader](https://chinasportshow.ru/catalog/f/REALLEADER/): по каталогу фабрики · ноги, руки и плечи, жимы (128 поз.)
+- [Langmai](https://chinasportshow.ru/catalog/f/M/): Шаньдун, Дэчжоу · кардио: дорожки, степперы-лестницы, эллипсы, велосипеды, гребные (44 поз.)
+- [Rosen (Shandong Rili)](https://chinasportshow.ru/catalog/f/N/) — премиум: Шаньдун · грузоблочные и нагружаемые линейки верхнего сегмента, кардио (190 поз.)
+- [MBH](https://chinasportshow.ru/catalog/f/MBH/): Шаньдун · грузоблочные линейки, рамы, мультистанции (167 поз.)
+- [Likanglai](https://chinasportshow.ru/catalog/f/LIKANGLAI/): Дэчжоу · кардио, грузоблочные и нагружаемые линии, рамы, мультистанции (349 поз.)
 - [Insight](https://chinasportshow.ru/catalog/f/INSIGHT/): Циндао · нагружаемые DH/SH/FH, грузоблочные RE80, стойки и свободный вес (98 поз.)
-- [Gymost](https://chinasportshow.ru/catalog/f/GYMOST/): по каталогу фабрики · ноги, жимы, скамьи (77 поз.)
-- [Good Brothers](https://chinasportshow.ru/catalog/f/GOODBROTHERS/): по каталогу фабрики · функциональный тренинг, мультистанции и кроссоверы, аксессуары и детали (85 поз.)
-- [Jiewei](https://chinasportshow.ru/catalog/f/JIEWEI/): по каталогу фабрики · ноги, ягодичные, тяги (57 поз.)
+- [Gymost](https://chinasportshow.ru/catalog/f/GYMOST/): по каталогу фабрики · ноги, жимы, скамьи (8 поз.)
 - [Lizhixing](https://chinasportshow.ru/catalog/f/LIZHIXING/): кардио: дорожки, эллипсы, велосипеды, лестницы (36 поз.)
-- [Bestgym](https://chinasportshow.ru/catalog/f/BESTGYM/): по каталогу фабрики · аксессуары и детали (4 поз.)
-- [Harison](https://chinasportshow.ru/catalog/f/HARISON/): по каталогу фабрики · мультистанции и кроссоверы, беговые дорожки, жимы (39 поз.)
-- [Sentinia](https://chinasportshow.ru/catalog/f/SENTINIA/): по каталогу фабрики · реформеры и станции, функциональный тренинг, покрытие и маты (44 поз.)
-- [Eliga](https://chinasportshow.ru/catalog/f/ELIGA/): по каталогу фабрики · ноги, мультистанции и кроссоверы, жимы (38 поз.)
-- [Jialifu](https://chinasportshow.ru/catalog/f/JIALIFU/): по каталогу фабрики · аксессуары и детали, скамьи, ноги (27 поз.)
-- [Yongwang](https://chinasportshow.ru/catalog/f/YONGWANG/): по каталогу фабрики · беговые дорожки, рамы, стойки, помосты, велотренажёры (24 поз.)
-- [Junxia / Pluex](https://chinasportshow.ru/catalog/f/JUNXIAPLUEX/): по каталогу фабрики · жимы, ноги, рамы, стойки, помосты (31 поз.)
-- [DHZ](https://chinasportshow.ru/catalog/f/DHZ/): Дэчжоу · нагружаемая линейка HammerForce Pro (36 поз.)
-- [Sunlife](https://chinasportshow.ru/catalog/f/SUNLIFE/): по каталогу фабрики (32 поз.)
-- [Quiikbody](https://chinasportshow.ru/catalog/f/QUIIKBODY/): по каталогу фабрики · ноги, жимы, тяги (30 поз.)
-- [iPhiFun / Luch](https://chinasportshow.ru/catalog/f/IPHIFUNLUCH/): по каталогу фабрики · функциональный тренинг, покрытие и маты, гантели, грифы и стойки (22 поз.)
-- [Jiacheng](https://chinasportshow.ru/catalog/f/JIACHENG/): спортивные табло (24 поз.)
-- [DAYU](https://chinasportshow.ru/catalog/f/DAYU/): по каталогу фабрики · гантели, грифы и стойки, функциональный тренинг, покрытие и маты (12 поз.)
-- [Jiahong](https://chinasportshow.ru/catalog/f/JIAHONG/): грифы и свободный вес (22 поз.)
-- [OK Sporting](https://chinasportshow.ru/catalog/f/OKSPORTING/): по каталогу фабрики (3 поз.)
-- [Double Star](https://chinasportshow.ru/catalog/f/DOUBLESTAR/): по каталогу фабрики (4 поз.)
-- [First Fitness](https://chinasportshow.ru/catalog/f/FIRSTFITNESS/): по каталогу фабрики (11 поз.)
-- [Yijie / Snowfit](https://chinasportshow.ru/catalog/f/YIJIESNOWFIT/): по каталогу фабрики (5 поз.)
-- [GD FFT](https://chinasportshow.ru/catalog/f/GDFFT/): контейнерные залы для улицы (10 поз.)
+- [Jiacheng](https://chinasportshow.ru/catalog/f/JIACHENG/): спортивные табло (23 поз.)
+- [GD FFT](https://chinasportshow.ru/catalog/f/GDFFT/): контейнерные залы для улицы (9 поз.)
 - [Yingte](https://chinasportshow.ru/catalog/f/YINGTE/): теннисные столы (11 поз.)
 - [Zroll](https://chinasportshow.ru/catalog/f/ZROLL/): Сямэнь · гребные тренажёры (водные, магнитные) (1 поз.)
-- [New Noble](https://chinasportshow.ru/catalog/f/NEWNOBLE/): по каталогу фабрики · мультистанции и кроссоверы (2 поз.)
 - [Enkin](https://chinasportshow.ru/catalog/f/ENKIN/): Нинбо · спин-байки (7 поз.)
-- [Core Deluxe](https://chinasportshow.ru/catalog/f/COREDELUXE/): по каталогу фабрики (4 поз.)
-- [Jingtop](https://chinasportshow.ru/catalog/f/JINGTOP/): по каталогу фабрики · ноги (5 поз.)
 - [MYDO](https://chinasportshow.ru/catalog/f/MYDO/): Сямэнь · коммерческие беговые дорожки (4 поз.)
-- [Paidou](https://chinasportshow.ru/catalog/f/PAIDOU/): падел-корты (4 поз.)
-- [Fumeihua](https://chinasportshow.ru/catalog/f/FUMEIHUA/): шкафчики для раздевалок (1 поз.)
-- [Todo Fitness](https://chinasportshow.ru/catalog/f/TODOFITNESS/): по каталогу фабрики (1 поз.)
 - [Yozoe](https://chinasportshow.ru/catalog/f/I/) — премиум: Гуандун · пилатес и йога — оборудование студий (33 поз.)
 
 ## Полезные страницы
