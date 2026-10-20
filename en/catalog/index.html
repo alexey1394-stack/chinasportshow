@@ -361,6 +361,7 @@ a{color:inherit}
   </form>
 </div>
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
 var LEAD = {kind:'yc', url:'https://functions.yandexcloud.net/d4e6ubis8ni2eanh5cl2'};
 var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
@@ -390,6 +391,17 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     if (k) { запомнить({ k: k, t: Date.now() }); try { var кп_ = (location.search.match(/[?&](kp=[A-Za-z0-9_.\-]+)/) || [])[1]; history.replaceState(null, '', location.pathname + (кп_ ? '?' + кп_ : '') + location.hash); } catch (e) {} }
   })();
   unlocked = !!память();
+  // Telegram-каталог (рация Боти 20.10, слово Алексея «Да, делай сейчас» 20.10.2026): страница
+  // открыта кнопкой в боте Авроры как мини-приложение. Клиент уже в нашем чате — цены открыты
+  // сразу, только позиции с ценой и фото, «Хочу КП» уходит с его Telegram без анкеты.
+  var TG = window.Telegram && Telegram.WebApp && Telegram.WebApp.initData ? Telegram.WebApp : null;
+  var ТГ_КТО = TG && TG.initDataUnsafe && TG.initDataUnsafe.user || null;
+  function тгКонтакт() { return !ТГ_КТО ? '' : ТГ_КТО.username ? '@' + ТГ_КТО.username : 'tg://user?id=' + ТГ_КТО.id; }
+  if (TG) {
+    try { TG.ready(); TG.expand(); } catch (e) {}
+    document.documentElement.classList.add('tg');
+    if (!unlocked) { запомнить({ contact: тгКонтакт(), tg: ТГ_КТО && ТГ_КТО.id, t: Date.now() }); unlocked = true; }
+  }
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.round(n).toLocaleString('ru-RU'); };
   var знак = function (с, в) {
@@ -400,10 +412,11 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Метка сборки в адресе: без неё браузер держит вчерашний data.json, и человек
   // видит старые цены и старые фильтры (29.09.2026: новые метки копий не появились
   // у посетителя, хотя на сервере уже лежали).
-  fetch('../../catalog/data.json?v=202610200751', { cache: 'no-cache' })
+  fetch('../../catalog/data.json?v=202610200855', { cache: 'no-cache' })
     .then(function (r) { return r.json(); }).then(function (d) { D = enD(d); init(); });
 
   function init() {
+    if (TG) D.items = D.items.filter(function (i) { return i.price && !i.nophoto; });
     $('gateN').textContent = D.items.length;
     $('howNote').textContent = D.note + ' Central Bank rate ' + D.rate.date + ': USD ' + String(D.rate.usd).replace('.', ',') + ', CNY ' + String(D.rate.cny).replace('.', ',') + ' (with a buffer).';
     var cz = {}, cc = {};
@@ -828,7 +841,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
           (unlocked ? '' : '<button class="btn" data-a="unlock">Unlock prices</button>') +
           '<button class="btn' + (unlocked ? '' : ' gh') + '" data-a="link">Copy link</button>' +
           '<button class="btn gh" data-a="pdf">Download PDF</button>' +
-          '<button class="btn gh" data-a="mgr">Send to Alex, your manager</button>' +
+          '<button class="btn' + (TG ? '' : ' gh') + '" data-a="mgr">' + (TG ? 'Хочу КП' : 'Send to Alex, your manager') + '</button>' +
         '</div><form class="kp__f" id="kpF" hidden novalidate><input name="c" placeholder="Phone or Telegram @username" autocomplete="tel">' +
           '<button class="btn" type="submit">Send</button>' +
           '<label class="agree"><input type="checkbox" name="agree" value="1"><span>I agree to the processing of my personal data in accordance with the <a href="../policy/" target="_blank" rel="noopener">Personal Data Processing Policy</a> of CIAPO LLC</span></label></form>' +
@@ -851,22 +864,23 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       if (своя && r && e.target.closest('.del')) { менять(r.dataset.id, 0); return; }
       var a = (e.target.closest('[data-a]') || {}).dataset; a = a && a.a;
       if (a === 'link') скопировать(вСсылку(s), e.target, 'Copy link');
-      if (a === 'mgr') { var f = m.querySelector('#kpF'); f.hidden = false; try { var g = JSON.parse(localStorage.getItem('cat_ok') || '{}'); if (g.contact || g.phone) f.c.value = g.contact || g.phone; } catch (er) {} f.c.focus(); }
+      if (a === 'mgr') { var f = m.querySelector('#kpF'); f.hidden = false; try { var g = JSON.parse(localStorage.getItem('cat_ok') || '{}'); if (g.contact || g.phone) f.c.value = g.contact || g.phone; } catch (er) {} if (TG) f.c.value = тгКонтакт(); f.c.focus(); }
       if (a === 'unlock') { m.remove(); $('gate').hidden = false; }
       if (a === 'pdf') { if (!unlocked) { m.remove(); $('gate').hidden = false; } else вPDF(s, e.target); }
     });
     m.addEventListener('submit', function (e) {
       e.preventDefault();
       var f = e.target, st = m.querySelector('#kpSt'), c = f.c.value.trim();
+      var тг = !!TG && c === тгКонтакт() && /^tg:/.test(c);
       var ник = /^@?[A-Za-z][A-Za-z0-9_]{4,31}$/.test(c), цифры = c.replace(/\D/g, '');
-      if (!ник && цифры.length < 10) { st.textContent = 'We need a phone number or a Telegram username (@name).'; return; }
+      if (!ник && !тг && цифры.length < 10) { st.textContent = 'We need a phone number or a Telegram username (@name).'; return; }
       if (!f.agree.checked) { st.textContent = 'Please tick the consent box.'; return; }
       var ids = Object.keys(s).filter(byId), sum = 0, cbm = 0;
       var items = ids.map(function (id) { var i = byId(id); if (i.price) sum += i.price * s[id]; cbm += (i.cbm || 0) * s[id];
         return { art: i.sku || i.art, name: i.ru + (i.price ? '' : ' — ЦЕНА ПО ЗАПРОСУ') + ' (' + ((D.zavody.filter(function (z) { return z.code === i.z; })[0] || {}).name || '') + ')', qty: s[id] }; });
-      var body = { name: ник ? (c[0] === '@' ? c : '@' + c) : 'From the catalogue', phone: ник ? (c[0] === '@' ? c : '@' + c) : цифры,
-        contact: ник ? 'Telegram' : 'Call', city: '',
-        note: 'КАТАЛОГ: подборка на КП · ссылка: ' + вСсылку(s),
+      var body = { name: тг ? c : ник ? (c[0] === '@' ? c : '@' + c) : 'From the catalogue', phone: тг ? c : ник ? (c[0] === '@' ? c : '@' + c) : цифры,
+        contact: ник || тг ? 'Telegram' : 'Call', city: '',
+        note: (TG ? 'TELEGRAM-КАТАЛОГ: хочу КП' + (ТГ_КТО ? ' · ' + [ТГ_КТО.first_name, ТГ_КТО.last_name].filter(Boolean).join(' ') + ' · id ' + ТГ_КТО.id : '') : 'КАТАЛОГ: подборка на КП') + ' · ссылка: ' + вСсылку(s),
         hall: { size: 'подборка на КП', zones: [], items: items, volume: Math.round(cbm * 10) / 10, total: Math.round(sum) }, total: Math.round(sum), page: location.href };
       st.textContent = 'Sending…';
       send(body).then(function () { f.hidden = true; st.innerHTML = '<b>The quote list is with our manager.</b> Alex replies within 15 minutes during business hours (Moscow time).'; })
@@ -913,7 +927,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610200751', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610200855', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
