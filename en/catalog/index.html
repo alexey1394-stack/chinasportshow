@@ -412,8 +412,15 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Метка сборки в адресе: без неё браузер держит вчерашний data.json, и человек
   // видит старые цены и старые фильтры (29.09.2026: новые метки копий не появились
   // у посетителя, хотя на сервере уже лежали).
+  // Панель фильтров на телефоне — до загрузки data.json (24.10.2026, Алексей: «кнопка не открывает»):
+  // каталог 1,9 МБ, на мобильном интернете кнопка молчала, пока он не скачается.
+  var sideOn = function (on) { $('side').classList.toggle('on', on); $('sideBg').classList.toggle('on', on); document.body.style.overflow = on ? 'hidden' : ''; };
+  $('fltBtn').addEventListener('click', function () { sideOn(true); });
+  [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
+
   fetch('../../catalog/data.json?v=202610240730', { cache: 'no-cache' })
-    .then(function (r) { return r.json(); }).then(function (d) { D = enD(d); init(); });
+    .then(function (r) { return r.json(); })
+    .then(function (d) { D = enD(d); init(); }, function () { $('cnt').textContent = 'Catalog failed to load — please refresh'; });
 
   function init() {
     if (TG) D.items = D.items.filter(function (i) { return i.price && !i.nophoto; });
@@ -516,9 +523,6 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       $('phFile').addEventListener('change', function () { if (this.files[0]) поФото(this.files[0]); this.value = ''; });
       $('phOff').addEventListener('click', function () { phRank = null; $('ph').classList.remove('on'); apply(); });
     }
-    var sideOn = function (on) { $('side').classList.toggle('on', on); $('sideBg').classList.toggle('on', on); document.body.style.overflow = on ? 'hidden' : ''; };
-    $('fltBtn').addEventListener('click', function () { sideOn(true); });
-    [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
     fromHash();
     zВидно();
     syncTog();
