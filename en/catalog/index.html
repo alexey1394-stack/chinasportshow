@@ -483,9 +483,9 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('../../catalog/data.json?v=202610281437', { cache: 'no-cache' })
+  fetch('../../catalog/data.json?v=202610281959', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
-    .then(function (d) { D = enD(d); init(); }, function () { $('cnt').textContent = 'Каталог не загрузился — обновите страницу'; });
+    .then(function (d) { D = enD(d); init(); }, function () { $('cnt').textContent = 'The catalog did not load — please refresh the page'; });
 
   function init() {
     if (TG) D.items = D.items.filter(function (i) { return i.price && !i.nophoto; });
@@ -923,7 +923,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
           (unlocked ? '' : '<button class="btn" data-a="unlock">Unlock prices</button>') +
           '<button class="btn' + (unlocked ? '' : ' gh') + '" data-a="link">Copy link</button>' +
           '<button class="btn gh" data-a="pdf">Download PDF</button>' +
-          '<button class="btn' + (TG ? '' : ' gh') + '" data-a="mgr">' + (TG ? 'Хочу КП' : 'Send to Alex, your manager') + '</button>' +
+          '<button class="btn' + (TG ? '' : ' gh') + '" data-a="mgr">' + (TG ? 'Request a quote' : 'Send to Alex, your manager') + '</button>' +
         '</div><form class="kp__f" id="kpF" hidden novalidate><input name="c" placeholder="Phone or Telegram @username" autocomplete="tel">' +
           '<button class="btn" type="submit">Send</button>' +
           '<label class="agree"><input type="checkbox" name="agree" value="1"><span>I agree to the processing of my personal data in accordance with the <a href="../policy/" target="_blank" rel="noopener">Personal Data Processing Policy</a> of CIAPO LLC</span></label></form>' +
@@ -1339,7 +1339,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610281437', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610281959', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
