@@ -171,6 +171,69 @@ a{color:inherit}
 .brk{display:grid;grid-template-columns:1fr auto;gap:3px 12px;font-size:12.5px;color:var(--graphite);border-top:1px solid var(--hair);padding-top:10px}
 .brk b{color:var(--ink);font-weight:500;font-family:var(--f-m);font-size:12px}
 @media(max-width:760px){.modal__box{grid-template-columns:minmax(0,1fr)}.modal__box>*{min-width:0}}
+/* «Я открываю зал» и фильтр «под помещение» (Флора, 28.10.2026) */
+.room{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.room label{display:flex;flex-direction:column;gap:3px;font:10px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--graphite)}
+.room input{width:100%;font:13px var(--f-m);padding:7px 6px;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);text-transform:none;letter-spacing:0}
+.gk-cta{display:flex;align-items:center;gap:16px;border:1px solid var(--ink);background:var(--paper-2);padding:14px 16px;margin:0 0 16px}
+.gk-cta div{flex:1;font-size:13.5px;line-height:1.45}.gk-cta b{font-family:var(--f-h);font-size:17px;text-transform:uppercase;letter-spacing:.02em;margin-right:4px}
+.gk-cta button,.gk .go{border:0;background:var(--gold);color:#fff;font:12px var(--f-m);letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;cursor:pointer;white-space:nowrap}
+.gk-cta button:hover,.gk .go:hover{background:var(--ink)}
+.gk{max-width:980px;padding:24px 26px 0;display:block}.gk h2{font-size:1.6rem;margin:0 0 4px}.gk .sub{color:var(--graphite);font-size:13px;margin:0 0 14px}
+.gk .fm{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin:6px 0 16px}
+.gk .fm button{text-align:left;border:1px solid var(--rule);background:var(--paper-2);padding:12px;cursor:pointer;color:var(--ink);font:inherit;font-size:14px;line-height:1.3}
+.gk .fm button small{display:block;color:var(--graphite);font-size:11.5px;margin-top:4px}.gk .fm button.on{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.gk .row{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;margin:0 0 16px}.gk .row label{display:flex;flex-direction:column;gap:5px;font:10.5px var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--graphite)}
+.gk .row input{font:16px var(--f-m);padding:8px 10px;width:120px;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink)}
+.gk .seg{margin:0}.gk .seg button{flex:0 0 auto;padding:9px 12px}
+.gk .zn{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:16px 0 6px;border-bottom:1px solid var(--hair);padding-bottom:5px}
+.gk .r{display:grid;grid-template-columns:64px minmax(0,1fr) auto auto auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--hair)}
+.gk .r img{width:64px;height:64px;object-fit:contain;background:var(--tile);cursor:pointer}.gk .r .n b{display:block;font-size:13.5px}.gk .r .n span{font-size:12px;color:var(--graphite)}
+.gk .r .n a{color:inherit;cursor:pointer;text-decoration:underline dotted}.gk .r .q{display:flex;align-items:center;gap:4px}.gk .r .q button{width:26px;height:26px;border:1px solid var(--rule);background:var(--paper-2);cursor:pointer;color:var(--ink)}
+.gk .r .q input{width:58px;text-align:center;font:13px var(--f-m);padding:4px;border:1px solid var(--rule);background:var(--paper);color:var(--ink)}.gk .r .q i{font-style:normal;font-size:11px;color:var(--graphite)}
+.gk .r .p{font-family:var(--f-m);font-size:13px;min-width:96px;text-align:right}.gk .r .alt{border:1px solid var(--rule);background:transparent;font:10.5px var(--f-m);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;cursor:pointer;color:var(--ink)}
+.gk .r.no{opacity:.55}.gk .alts{grid-column:1/-1;display:flex;gap:8px;overflow-x:auto;padding:6px 0 4px}
+.gk .alts button{flex:0 0 132px;border:1px solid var(--hair);background:var(--paper);padding:6px;cursor:pointer;text-align:left;font:inherit;font-size:11.5px;color:var(--ink)}.gk .alts button:hover{border-color:var(--gold)}
+.gk .alts img{width:100%;height:84px;object-fit:contain;background:var(--tile)}.gk .alts b{display:block;font-family:var(--f-m);font-weight:500;font-size:11.5px}
+.gk .tot{position:sticky;bottom:0;background:var(--ink);color:var(--milk);margin:16px -26px 0;padding:14px 26px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.gk .tot b{font-family:var(--f-h);font-size:24px;color:var(--gold-2)}.gk .tot span{font-size:12px;color:#B9BDC1}.gk .tot .go{margin-left:auto}.gk .tot .gh{background:transparent;border:1px solid #6C7076;color:var(--milk);font:12px var(--f-m);letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;cursor:pointer}
+.gk .note2{font-size:12px;color:var(--graphite);margin:10px 0 0}
+@media(max-width:760px){.gk{padding:18px 14px 0}.gk .r{grid-template-columns:52px minmax(0,1fr) auto;row-gap:6px}.gk .r img{width:52px;height:52px}.gk .r .q{grid-column:2}.gk .r .p{grid-column:3;grid-row:2}.gk .r .alt{grid-column:2/4;justify-self:start}
+  .gk .tot{margin:16px -14px 0;padding:12px 14px}.gk-cta{flex-direction:column;align-items:stretch}}
+/* галерея карточки (Флора, 28.10.2026): лента со свайпом, миниатюры, весь экран, видео */
+.modal__pic.gal{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0;min-height:0}
+.gal__st{position:relative;width:100%;aspect-ratio:1/1;max-height:560px;background:var(--tile)}
+.gal__tr{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.gal__tr::-webkit-scrollbar{display:none}
+.gal__s{flex:0 0 100%;width:100%;height:100%;margin:0;scroll-snap-align:center;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:14px;box-sizing:border-box;overflow:hidden}
+.gal__s img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in}
+.modal__pic.gal .gal__s img{max-height:100%}
+.gal__s video{max-width:100%;max-height:100%;background:#000}
+.gal__play{position:relative;border:0;padding:0;background:transparent;cursor:pointer;max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center}
+.gal__play img{cursor:pointer}
+.gal__pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(22,24,26,.74);color:#fff;font-size:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;pointer-events:none}
+.gal__pl small{font:9.5px var(--f-m);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
+.gal__a{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:56px;border:0;background:rgba(22,24,26,.5);color:#fff;font-size:28px;line-height:1;cursor:pointer;z-index:2;padding:0}
+.gal__a:hover{background:rgba(22,24,26,.8)}
+.gal__a--p{left:0}.gal__a--n{right:0}
+.gal__a[disabled]{opacity:.2;cursor:default}
+.gal__c{position:absolute;left:10px;bottom:10px;font:10.5px var(--f-m);letter-spacing:.08em;padding:3px 7px;background:rgba(22,24,26,.7);color:#fff;z-index:2;pointer-events:none}
+.gal__fs{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border:0;background:rgba(22,24,26,.7);color:#fff;font-size:17px;line-height:1;cursor:pointer;z-index:2;padding:0}
+.gal__fs:hover{background:var(--gold)}
+.gal__th{display:flex;gap:6px;padding:8px;overflow-x:auto;scrollbar-width:thin;background:var(--paper);border-top:1px solid var(--hair)}
+.gal__t{flex:0 0 58px;width:58px;height:58px;border:1px solid var(--hair);background:var(--tile);padding:3px;cursor:pointer;position:relative;box-sizing:border-box}
+.gal__t img{width:100%;height:100%;object-fit:contain;display:block}
+.gal__t.on{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.gal__t.v::after{content:'\25B6';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;background:rgba(22,24,26,.38)}
+.card .gm{position:absolute;left:10px;bottom:10px;z-index:2;font:9.5px var(--f-m);letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;background:var(--ink);color:var(--milk);pointer-events:none}
+.card .gm.v{background:var(--gold)}
+.lb{position:fixed;inset:0;z-index:120;background:#0d0f10;display:flex}
+.lb .gal__tr{height:100%}
+.lb .gal__s{padding:48px 8px 14px}
+.lb .gal__s img{transition:transform .2s ease;cursor:zoom-in}
+.lb .gal__s img.z{transform:scale(2.2);cursor:zoom-out}
+.lb .gal__c{left:12px;top:14px;bottom:auto}
+.lb__x{position:absolute;right:6px;top:4px;z-index:3;background:transparent;border:0;color:#fff;font-size:36px;line-height:1;cursor:pointer;padding:4px 12px}
+@media(max-width:900px){.gal__st{aspect-ratio:4/3;max-height:46vh}.gal__s{padding:8px}.gal__a{width:32px;height:46px;font-size:22px}.gal__t{flex-basis:50px;width:50px;height:50px}}
 /* подборка */
 .tray{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:var(--milk);transform:translateY(110%);transition:transform .3s}
 .tray.on{transform:none}
@@ -309,7 +372,8 @@ a{color:inherit}
     <div class="f"><h3>Сегмент</h3><div class="seg" id="fS"><button type="button" data-seg="all" class="on">Все</button><button type="button" data-seg="prem">Премиум</button><button type="button" data-seg="mid">Средний</button></div></div>
     <div class="f"><h3>Фабрика <button type="button" class="tog" data-scope="fZ">снять все</button></h3><input id="zQ" class="zfind" type="search" placeholder="Найти фабрику" autocomplete="off"><div id="fZ"></div></div>
     <div class="f"><h3>Категория <button type="button" class="tog" data-scope="fC">снять все</button></h3><div id="fC"></div></div>
-    <div class="f"><h3>Фото</h3><label style="display:flex;gap:8px;align-items:center;font-size:13.5px"><input type="checkbox" id="onlyPhoto"><span>Только с фотографиями</span></label><label style="display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:6px"><input type="checkbox" id="onlyPrice"><span>Только с ценой (без «по запросу»)</span></label></div>
+    <div class="f"><h3>Фото</h3><label style="display:flex;gap:8px;align-items:center;font-size:13.5px"><input type="checkbox" id="onlyPhoto"><span>Только с фотографиями</span></label><label style="display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:6px"><input type="checkbox" id="onlyPrice"><span>Только с ценой (без «по запросу»)</span></label><label style="display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:6px"><input type="checkbox" id="onlyVideo"><span>Только с видео</span></label><label style="display:flex;gap:8px;align-items:center;font-size:13.5px;margin-top:6px"><input type="checkbox" id="onlyGal"><span>Несколько фото</span></label></div>
+    <div class="f"><h3>Под помещение</h3><div class="room"><label>Высота до, см<input id="rH" type="number" inputmode="numeric" placeholder="260"></label><label>Основание до, м²<input id="rS" type="number" step="0.1" inputmode="decimal" placeholder="3"></label><label>Вес до, кг<input id="rW" type="number" inputmode="numeric" placeholder="300"></label></div><span class="z" style="margin-left:0">По габаритам изделия. Пока фильтр включён, позиции без габаритов скрыты.</span></div>
     <div class="f"><h3>Цена, ₽</h3><div class="price"><input id="pMin" type="number" placeholder="от" inputmode="numeric"><span>—</span><input id="pMax" type="number" placeholder="до" inputmode="numeric"></div></div>
     <div class="f"><h3>Как считаем</h3><p class="note" id="howNote" style="margin:0"></p></div>
   </aside>
@@ -318,6 +382,7 @@ a{color:inherit}
     <div class="bar"><h1>Каталог</h1><button type="button" class="fltBtn" id="fltBtn">Фильтры <i id="fltN"></i></button><span class="cnt" id="cnt"></span>
       <button type="button" class="share" id="share" title="Скопировать ссылку с этим набором фильтров">Ссылка на фильтр</button><select id="sort"><option value="cat">по категории</option><option value="pa">цена ↑</option><option value="pd">цена ↓</option><option value="nm">по названию</option></select></div>
     <p class="note">Фабрики, с которыми работаем напрямую, — под своими именами. Цены пересчитываются по курсу ЦБ при каждом обновлении каталога. Позиции без хорошего снимка стоят в конце списка — фото пришлём по запросу.</p>
+    <div class="gk-cta" id="gkCta"><div><b>Открываете зал?</b> Соберём стартовый комплект под формат и площадь — с ценой, объёмом и долей контейнера. Любую позицию можно заменить, потом — в подборку и на расчёт.</div><button type="button" id="gkOpen">Я открываю зал</button></div>
     <div class="ph" id="ph"><img id="phImg" alt=""><div><b id="phT">Похожие на ваше фото</b><br><span id="phS"></span></div><button type="button" id="phOff">✕ Сбросить</button></div>
     <div class="pick" id="pick" hidden>
       <div class="t"><b>Relax Fitness</b> — выбор владельца CHINA SPORT SHOW.<br>
@@ -418,7 +483,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('data.json?v=202610280730', { cache: 'no-cache' })
+  fetch('data.json?v=202610281437', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
     .then(function (d) { D = d; init(); }, function () { $('cnt').textContent = 'Каталог не загрузился — обновите страницу'; });
 
@@ -529,6 +594,9 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     ['pMin', 'pMax', 'q'].forEach(function (id) { $(id).addEventListener('input', apply); });
     $('onlyPhoto').addEventListener('change', apply);
     $('onlyPrice').addEventListener('change', apply);
+    ['onlyVideo', 'onlyGal'].forEach(function (id) { $(id).addEventListener('change', apply); });
+    ['rH', 'rS', 'rW'].forEach(function (id) { $(id).addEventListener('input', apply); });
+    $('gkOpen').addEventListener('click', мастерЗала);
     $('sort').addEventListener('change', apply);
     $('more').addEventListener('click', function () { draw(false); });
     // Подборка на КП (слово Алексея 15.10.2026): хранится в браузере клиента,
@@ -551,6 +619,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     var zs = [].map.call(document.querySelectorAll('#fZ input:checked'), function (i) { return i.value; });
     var cs = [].map.call(document.querySelectorAll('#fC input:checked'), function (i) { return i.value; });
     var mn = +$('pMin').value || 0, mx = +$('pMax').value || Infinity, q = $('q').value.trim().toLowerCase();
+    var пом = { h: +$('rH').value || 0, s: +String($('rS').value).replace(',', '.') || 0, w: +$('rW').value || 0 };
     var order = D.cats.map(function (c) { return c.k; });
     // поиск: по словам, без окончаний («ягодичный» найдёт «ягодичные»), плюс название категории и группы
     var catN = {}; D.cats.forEach(function (c) { catN[c.k] = (c.n + ' ' + c.g).toLowerCase(); });
@@ -560,6 +629,14 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       if (i.price ? !(i.price >= mn && i.price <= mx) : (mn || mx !== Infinity || $('onlyPrice').checked)) return false;
       if (копияВыбрана && i.cp !== копияВыбрана) return false;
       if ($('onlyPhoto').checked && i.nophoto) return false;
+      if ($('onlyVideo').checked && !(i.v && i.v.length)) return false;
+      if ($('onlyGal').checked && !i.g && !(i.v && i.v.length)) return false;
+      if (пом.h || пом.s || пом.w) {
+        var г = габариты(i);
+        if (пом.h && !(г && г.h <= пом.h * 10)) return false;
+        if (пом.s && !(г && г.s <= пом.s)) return false;
+        if (пом.w && !(i.kg && !i.unit && i.kg <= пом.w)) return false;
+      }
       if (!qw.length) return true;
       var t = (i.ru + ' ' + i.en + ' ' + i.art + ' ' + (catN[i.cat] || '')).toLowerCase();
       return qw.every(function (w) { return t.indexOf(w) >= 0; });
@@ -583,6 +660,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     $('cnt').textContent = view.length + ' из ' + D.items.length;
     $('sideDone').textContent = 'Показать ' + view.length + ' поз.';
     var акт = (D.zavody.length - zs.length) + (document.querySelectorAll('#fC input').length - cs.length) + (mn ? 1 : 0) + (mx !== Infinity ? 1 : 0) + ($('onlyPrice').checked ? 1 : 0);
+    акт += ($('onlyVideo').checked ? 1 : 0) + ($('onlyGal').checked ? 1 : 0) + (пом.h ? 1 : 0) + (пом.s ? 1 : 0) + (пом.w ? 1 : 0);
     $('fltN').textContent = акт || ''; $('fltN').style.display = акт ? '' : 'none';
     var segs = D.zavody.map(function (z) { return zs.indexOf(z.code) >= 0 ? z.seg : null; }).filter(Boolean);
     var allOn = zs.length === D.zavody.length, only = segs.length && segs.every(function (x) { return x === segs[0]; }) && D.zavody.filter(function (z) { return z.seg === segs[0]; }).length === zs.length ? segs[0] : null;
@@ -686,7 +764,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     var кадр = i.nophoto
       ? '<div class="pic no"><b>' + i.art + '</b><span>Фото уточняем у фабрики — пришлём по запросу</span></div>'
       : null;
-    return '<div class="card' + (z && z.seg === 'prem' ? ' prem' : '') + '" data-id="' + i.id + '">' + (кадр || '<div class="pic">' + (z && z.seg === 'prem' ? '<span class="pm">премиум</span>' : '') + (phRank && phRank[i.id] !== undefined ? '<span class="sim">' + Math.round(phRank[i.id] * 100) + ' %</span>' : '') + '<img loading="lazy" src="img/' + i.id + '.webp" alt=""></div>') + '<div class="b">' +
+    return '<div class="card' + (z && z.seg === 'prem' ? ' prem' : '') + '" data-id="' + i.id + '">' + (кадр || '<div class="pic">' + (z && z.seg === 'prem' ? '<span class="pm">премиум</span>' : '') + (phRank && phRank[i.id] !== undefined ? '<span class="sim">' + Math.round(phRank[i.id] * 100) + ' %</span>' : '') + '<img loading="lazy" src="img/' + i.id + '.webp" alt="">' + (i.v ? '<span class="gm v">▶ ' + ГТ.видео + '</span>' : i.g ? '<span class="gm">' + (i.g + 1) + ' ' + ГТ.фото + '</span>' : '') + '</div>') + '<div class="b">' +
       (i.cp ? '<div class="cpm">' + (((D.copies || []).filter(function (м) { return м.k === i.cp; })[0] || {}).n || '') + '</div>' : '') +
       '<div class="zc"><b>' + z.name + '</b> · ' + i.art + '</div><div class="nm">' + i.ru + '</div>' +
       (i.en && i.en !== i.ru ? '<div class="en">' + i.en + '</div>' : '') +
@@ -895,10 +973,339 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     });
   }
   $('trayGo').addEventListener('click', function () { $('tray').classList.add('ask'); try { var g = JSON.parse(localStorage.getItem('cat_ok') || '{}'); if (g.phone) $('trayForm').phone.value = g.phone; } catch (e) {} });
+  // ── ГАБАРИТЫ: «2380*1000*1730» (мм) или «154*66*128» (см у MND) → высота в мм, основание в м² ──
+  var ГАБ = {};
+  function габариты(i) {
+    if (i.id in ГАБ) return ГАБ[i.id];
+    var ч = String(i.dims || '').match(/\d+(?:[.,]\d+)?/g), г = null;
+    if (!i.unit && ч && ч.length >= 3) {
+      var L = parseFloat(ч[0].replace(',', '.')), W = parseFloat(ч[1].replace(',', '.')), H = parseFloat(ч[2].replace(',', '.'));
+      if (Math.max(L, W, H) < 400) { L *= 10; W *= 10; H *= 10; }      // сантиметры → мм
+      if (L > 0 && W > 0 && H > 0) г = { h: H, s: L * W / 1e6 };
+    }
+    return (ГАБ[i.id] = г);
+  }
+
+  // ── «Я ОТКРЫВАЮ ЗАЛ» (Флора, задача Алексея 28.10.2026; форматы — его кнопки 28.10) ──────────
+  // Стартовый комплект под формат и площадь: слоты → позиции каталога с ценой и фото. Силовые для
+  // зала берём по возможности из ОДНОЙ фабрики — зал выглядит цельно. Это отправная точка:
+  // состав и количество меняются, любая позиция заменяется, точный расчёт — в КП.
+  var СЛОТ = {   // ключ: [название, категория или '', слова «да», слова «нет»]
+    tread: ['Беговая дорожка', 'tread', 'treadmill|дорожк', 'curv|manual|non.?motor|безмотор|pet'],
+    curve: ['Безмоторная дорожка', 'tread', 'curv|non.?motor|безмотор', 'pet'],
+    ellip: ['Эллиптический тренажёр', 'ellip', '', ''],
+    bike: ['Велотренажёр', 'bike', 'bike|велотрен', 'spin|cycl|air|аэро|сайкл'],
+    spin: ['Сайкл (спин-байк)', 'bike', 'spin|indoor cycl|сайкл|spinning', ''],
+    airbike: ['Аэробайк', '', 'air ?bike|assault|аэробайк|fan bike', ''],
+    rower: ['Гребной тренажёр', 'rowski', 'rower|rowing|гребн', 'ski|лыж'],
+    ski: ['Лыжный тренажёр', 'rowski', 'ski|лыж', ''],
+    stair: ['Лестница-степпер', 'stair', '', ''],
+    legpress: ['Жим ногами', 'legs', 'leg press|жим ног', ''],
+    legext: ['Разгибание ног', 'legs', 'leg extension|разгибание ног', 'curl'],
+    legcurl: ['Сгибание ног', 'legs', 'leg curl|сгибание ног', 'extension'],
+    chest: ['Жим от груди', 'press', 'chest press|жим от груди', 'incline|decline|iso'],
+    shoulder: ['Жим от плеч', 'press', 'shoulder press|жим от плеч', ''],
+    lat: ['Вертикальная тяга', 'row', 'lat ?pull|pulldown|вертикальная тяга', ''],
+    row: ['Горизонтальная тяга', 'row', 'seated row|low row|тяга сидя|horizontal', ''],
+    fly: ['Баттерфляй / пек-дек', '', 'pec ?deck|pec fly|butterfly|баттерфляй|пек-дек|rear delt', ''],
+    cross: ['Кроссовер', 'multi', 'cross ?over|cable cross|кроссовер', ''],
+    thrust: ['Ягодичный мост (hip thrust)', '', 'hip thrust|ягодичный мост|glute bridge', ''],
+    abd: ['Отведение / приведение', '', 'abduct|adduct|отведен|приведен', ''],
+    kick: ['Отведение ноги назад', '', 'kick ?back|rear kick|glute kick', ''],
+    hack: ['Гакк-присед / пендулум', '', 'hack|pendulum|гакк|маятник', 'calf|голен|икр'],
+    ab: ['Пресс', 'core', 'abdominal|crunch|пресс', 'press'],
+    hyper: ['Гиперэкстензия', 'core', 'back extension|hyper|гиперэкст', ''],
+    rack: ['Силовая рама', 'rack', 'power rack|power cage|squat rack|half rack|рама', ''],
+    benchA: ['Скамья регулируемая', 'bench', 'adjustable|регулир', ''],
+    benchF: ['Скамья горизонтальная', 'bench', 'flat bench|горизонт', ''],
+    dumb: ['Гантели', 'dumb', 'dumbbell|гантел', 'rack|стойк|adjust'],
+    dumbRack: ['Стойка для гантелей', '', 'dumbbell rack|стойка для гантел', ''],
+    plates: ['Диски', 'plate', 'plate|диск|bumper', 'rack|tree|стойк|стеллаж'],
+    floor: ['Покрытие', 'floor', 'rubber|floor|tile|покрыт|плитк|мат', 'smith|platform|платформ'],
+    rig: ['Функциональная рама (рига)', '', 'rig\\b|monkey|функциональная рама|рига|multi.?functional station', 'trainer|кроссов|bike'],
+    sled: ['Сани', '', 'sled|сани|prowler', ''],
+    kb: ['Гири', '', 'kettlebell|гир', 'rack'],
+    plyo: ['Плиобокс', '', 'plyo|jump box|бокс для прыж', ''],
+    ball: ['Медбол / вол-бол', '', 'medicine|wall ?ball|медбол|slam', 'rack'],
+    reformer: ['Реформер', 'pilates', 'reformer|реформер', 'tower|cadillac|кадиллак'],
+    cadillac: ['Кадиллак', 'pilates', 'cadillac|кадиллак', ''],
+    barrel: ['Бочка (barrel)', 'pilates', 'barrel|бочк|ladder', ''],
+    chair: ['Стул для пилатеса', 'pilates', 'chair|стул', '']
+  };
+  var СИЛОВЫЕ = ['legpress', 'legext', 'legcurl', 'chest', 'shoulder', 'lat', 'row', 'fly', 'cross', 'thrust', 'abd', 'ab', 'hyper', 'kick', 'hack'];
+  function кол(a, d, мин, макс) { return Math.max(мин, Math.min(макс, Math.round(a / d))); }
+  var ФОРМАТ = {
+    gym: { н: 'Тренажёрный зал / клуб', о: 'кардио, силовые, свободный вес', пл: 300, состав: function (a) { return [
+      ['Кардио', [['tread', кол(a, 60, 2, 14)], ['ellip', кол(a, 200, 1, 5)], ['bike', кол(a, 250, 1, 4)], ['rower', a >= 200 ? 1 : 0], ['stair', a >= 400 ? 1 : 0]]],
+      ['Силовые', [['legpress', 1], ['legext', 1], ['legcurl', 1], ['chest', 1], ['shoulder', 1], ['lat', a >= 500 ? 2 : 1], ['row', 1], ['fly', 1], ['cross', a >= 500 ? 2 : 1], ['thrust', 1], ['abd', 1], ['ab', 1], ['hyper', 1]]],
+      ['Свободный вес', [['rack', a >= 400 ? 2 : 1], ['benchA', кол(a, 120, 2, 6)], ['benchF', a >= 250 ? 2 : 1], ['dumbRack', 1], ['dumb', a >= 400 ? 1000 : 680], ['plates', a >= 400 ? 500 : 300]]],
+      ['Покрытие', [['floor', Math.round(a * 0.3)]]]]; } },
+    hyrox: { н: 'Функционал и HYROX', о: 'лыжи, гребля, аэробайки, рама, сани', пл: 150, состав: function (a) { return [
+      ['Кардио для HYROX', [['ski', кол(a, 50, 2, 8)], ['rower', кол(a, 50, 2, 8)], ['airbike', кол(a, 75, 1, 6)], ['curve', кол(a, 100, 1, 4)]]],
+      ['Функционал', [['rig', a >= 300 ? 2 : 1], ['sled', a >= 200 ? 2 : 1], ['kb', кол(a, 50, 2, 6)], ['plyo', кол(a, 50, 2, 6)], ['ball', кол(a, 25, 4, 12)]]],
+      ['Свободный вес', [['benchA', кол(a, 100, 1, 4)], ['plates', 300]]],
+      ['Покрытие', [['floor', Math.round(a * 0.8)]]]]; } },
+    pilates: { н: 'Пилатес-студия', о: 'реформеры, кадиллак, бочки, стулья', пл: 80, состав: function (a) { return [
+      ['Пилатес', [['reformer', кол(a, 9, 4, 16)], ['cadillac', a >= 60 ? 1 : 0], ['barrel', a >= 80 ? 2 : 1], ['chair', a >= 80 ? 2 : 1]]]]; } },
+    glute: { н: 'Ягодичная студия', о: 'hip thrust, отведение, гакк, степперы', пл: 120, состав: function (a) { var x = a >= 200 ? 2 : 1; return [
+      ['Ягодичные машины', [['thrust', x], ['abd', x], ['kick', x], ['hack', 1], ['legpress', 1], ['legcurl', 1], ['hyper', 1]]],
+      ['Кардио', [['stair', a >= 150 ? 2 : 1], ['tread', кол(a, 60, 1, 4)]]],
+      ['Свободный вес', [['benchA', 2], ['dumbRack', 1], ['dumb', 680]]],
+      ['Покрытие', [['floor', Math.round(a * 0.3)]]]]; } },
+    cycle: { н: 'Сайкл-студия', о: 'спин-байки на площадь', пл: 80, состав: function (a) { return [
+      ['Сайкл', [['spin', кол(a, 3, 8, 40)]]],
+      ['Покрытие', [['floor', Math.round(a * 0.9)]]]]; } }
+  };
+  function завод(code) { return D.zavody.filter(function (z) { return z.code === code; })[0] || {}; }
+  function ед(к) { return к === 'floor' ? 'м²' : (к === 'dumb' || к === 'plates') ? 'кг' : 'шт'; }
+  function кандидаты(к, сег) {
+    var с = СЛОТ[к], inc = с[2] ? new RegExp(с[2], 'i') : null, exc = с[3] ? new RegExp(с[3], 'i') : null, е = ед(к);
+    return D.items.filter(function (i) {
+      if (!i.price || i.nophoto) return false;
+      if (с[1] && i.cat !== с[1]) return false;
+      var t = i.en + ' ' + i.ru;
+      if (inc && !inc.test(t)) return false;
+      if (exc && exc.test(t)) return false;
+      if (е === 'шт' ? (i.unit && i.unit !== 'шт') : i.unit !== е) return false;
+      if (сег !== 'all' && завод(i.z).seg !== сег) return false;
+      return true;
+    }).sort(function (a, b) { return a.price - b.price; });
+  }
+  function выбрать(сп, ур) { return сп.length ? сп[ур === 'econ' ? 0 : Math.floor((сп.length - 1) / 2)] : null; }
+  function собратьКомплект(ф, a, сег, ур) {
+    var зоны = ФОРМАТ[ф].состав(a), силовые = [];
+    зоны.forEach(function (z) { z[1].forEach(function (x) { if (x[1] > 0 && СИЛОВЫЕ.indexOf(x[0]) >= 0) силовые.push(x[0]); }); });
+    // линейка силовых: фабрика, закрывающая больше всего слотов; при равенстве — дешевле
+    var лучшая = null;
+    if (силовые.length > 2) {
+      var счёт = {};
+      силовые.forEach(function (к) {
+        var по = {};
+        кандидаты(к, сег).forEach(function (i) { if (!по[i.z]) по[i.z] = i.price; });
+        Object.keys(по).forEach(function (z) { счёт[z] = счёт[z] || { n: 0, sum: 0 }; счёт[z].n++; счёт[z].sum += по[z]; });
+      });
+      Object.keys(счёт).forEach(function (z) { var x = счёт[z]; if (!лучшая || x.n > счёт[лучшая].n || (x.n === счёт[лучшая].n && x.sum < счёт[лучшая].sum)) лучшая = z; });
+    }
+    return { ф: ф, a: a, сег: сег, ур: ур, линейка: лучшая, зоны: зоны.map(function (z) {
+      return [z[0], z[1].filter(function (x) { return x[1] > 0; }).map(function (x) {
+        var сп = кандидаты(x[0], сег), своя = лучшая && СИЛОВЫЕ.indexOf(x[0]) >= 0 ? сп.filter(function (i) { return i.z === лучшая; }) : [];
+        var i = выбрать(своя.length ? своя : сп, ур);
+        return { к: x[0], n: x[1], id: i ? i.id : null, сп: сп };
+      })];
+    }) };
+  }
+  function мастерЗала() {
+    var m = document.createElement('div'); m.className = 'modal';
+    var ф = 'gym', сег = 'all', ур = 'opt';
+    m.innerHTML = '<div class="modal__box gk"><button class="x" aria-label="Закрыть">×</button><h2>Я открываю зал</h2>' +
+      '<p class="sub">Соберём стартовый комплект под формат и площадь. Это отправная точка: состав и количество меняются, любую позицию можно заменить; точный расчёт — в коммерческом предложении.</p>' +
+      '<div class="fm">' + Object.keys(ФОРМАТ).map(function (k) { return '<button type="button" data-f="' + k + '"' + (k === ф ? ' class="on"' : '') + '>' + ФОРМАТ[k].н + '<small>' + ФОРМАТ[k].о + '</small></button>'; }).join('') + '</div>' +
+      '<div class="row"><label>Площадь зала, м²<input id="gkA" type="number" inputmode="numeric" min="20" max="3000" value="' + ФОРМАТ[ф].пл + '"></label>' +
+      '<label>Сегмент<div class="seg" id="gkS"><button type="button" data-s="all" class="on">Любой</button><button type="button" data-s="mid">Средний</button><button type="button" data-s="prem">Премиум</button></div></label>' +
+      '<label>Уровень цен<div class="seg" id="gkU"><button type="button" data-u="opt" class="on">Оптимум</button><button type="button" data-u="econ">Эконом</button></div></label>' +
+      '<button type="button" class="go" id="gkGo">Собрать комплект</button></div><div id="gkR"></div></div>';
+    document.body.appendChild(m);
+    function вкл(sel, attr, v) { [].forEach.call(m.querySelectorAll(sel), function (b) { b.classList.toggle('on', b.getAttribute(attr) === v); }); }
+    m.addEventListener('click', function (e) {
+      if (e.target === m || e.target.closest('.x')) { m.remove(); return; }
+      var b = e.target.closest('.fm button'); if (b) { ф = b.dataset.f; вкл('.fm button', 'data-f', ф); m.querySelector('#gkA').value = ФОРМАТ[ф].пл; return; }
+      var sb = e.target.closest('#gkS button'); if (sb) { сег = sb.dataset.s; вкл('#gkS button', 'data-s', сег); return; }
+      var ub = e.target.closest('#gkU button'); if (ub) { ур = ub.dataset.u; вкл('#gkU button', 'data-u', ур); return; }
+      if (e.target.id === 'gkGo') { var a = Math.max(20, Math.min(3000, +m.querySelector('#gkA').value || ФОРМАТ[ф].пл)); показатьКомплект(m.querySelector('#gkR'), собратьКомплект(ф, a, сег, ур), m); }
+    });
+  }
+  function показатьКомплект(куда, к, m) {
+    function строка(x) {
+      var i = x.id && byId(x.id), с = СЛОТ[x.к], z = i ? завод(i.z) : {};
+      if (!i) return '<div class="r no" data-k="' + x.к + '"><div></div><div class="n"><b>' + с[0] + '</b><span>в каталоге пока нет подходящей позиции с ценой и фото — подберём в КП</span></div><div></div><div></div><div></div></div>';
+      return '<div class="r" data-k="' + x.к + '"><img src="img/' + i.id + '.webp" alt="" loading="lazy" data-open="' + i.id + '">' +
+        '<div class="n"><b>' + с[0] + '</b><span><a data-open="' + i.id + '">' + экр(i.ru) + '</a> · ' + экр(z.name) + ' · ' + экр(i.art) + '</span></div>' +
+        '<div class="q"><button type="button" data-d="-1" aria-label="Меньше">−</button><input type="number" min="0" value="' + x.n + '" aria-label="Количество"><button type="button" data-d="1" aria-label="Больше">+</button><i>' + ед(x.к) + '</i></div>' +
+        '<div class="p">' + (unlocked ? fmt(i.price * x.n) + ' ₽' : '•••') + '</div>' +
+        '<button type="button" class="alt">Заменить</button></div>';
+    }
+    function итог() {
+      var sum = 0, cbm = 0, поз = 0;
+      к.зоны.forEach(function (z) { z[1].forEach(function (x) { var i = x.id && byId(x.id); if (!i || !x.n) return; поз++; sum += i.price * x.n; cbm += (i.cbm || 0) * x.n; }); });
+      return '<div class="tot"><div><span>' + поз + ' поз. · объём ≈ ' + cbm.toFixed(1).replace('.', ',') + ' м³ · ' + Math.round(cbm / КОНТЕЙНЕР * 100) + ' % контейнера 40′</span><br>' +
+        (unlocked ? '<b>≈ ' + fmt(sum) + ' ₽</b> <span>в Москве с НДС, без брокера и сборки</span>' : '<b>цены скрыты</b> <span>откройте цены — увидите сумму</span>') + '</div>' +
+        (unlocked ? '<button type="button" class="go" id="gkAdd">Добавить в подборку</button>' : '<button type="button" class="go" id="gkUnlock">Открыть цены</button>') + '</div>';
+    }
+    function рисовать() {
+      var ф = ФОРМАТ[к.ф], лин = к.линейка && завод(к.линейка);
+      куда.innerHTML = '<div class="sub" style="margin-top:6px">' + ф.н + ' · ' + к.a + ' м²' + (лин ? ' · силовые — линейка <b>' + экр(лин.name) + '</b>, чтобы зал выглядел цельно' : '') + '</div>' +
+        к.зоны.map(function (z) { return '<div class="zn">' + z[0] + '</div>' + z[1].map(строка).join(''); }).join('') +
+        '<p class="note2">Количества — ориентир по площади (дорожка ≈ на 60 м², скамья ≈ на 120 м², покрытие — под зону свободного веса). Гантели и диски — в килограммах, покрытие — в м². Цены — по курсу ЦБ на ' + D.rate.date.split('-').reverse().join('.') + '.</p>' + итог();
+    }
+    рисовать();
+    куда.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (куда._заведено) { куда._к = к; return; }
+    куда._заведено = true; куда._к = к;
+    function слот(el) { var r = el.closest('.r'); if (!r) return null; var кл = r.dataset.k, найдено = null; куда._к.зоны.forEach(function (z) { z[1].forEach(function (x) { if (x.к === кл) найдено = x; }); }); return { r: r, x: найдено }; }
+    куда.addEventListener('click', function (e) {
+      к = куда._к;
+      var o = e.target.closest('[data-open]'); if (o) { open(o.dataset.open); return; }
+      var d = e.target.closest('.q button'); if (d) { var с = слот(d); с.x.n = Math.max(0, с.x.n + (+d.dataset.d) * (ед(с.x.к) === 'шт' ? 1 : 10)); рисовать(); return; }
+      var a = e.target.closest('.alt'); if (a) {
+        var с2 = слот(a), есть = с2.r.nextElementSibling && с2.r.nextElementSibling.classList.contains('alts');
+        if (есть) { с2.r.nextElementSibling.remove(); return; }
+        var вар = с2.x.сп.filter(function (i) { return i.id !== с2.x.id; }).slice(0, 12);
+        var div = document.createElement('div'); div.className = 'alts';
+        div.innerHTML = вар.length ? вар.map(function (i) { return '<button type="button" data-pick="' + i.id + '" data-for="' + с2.x.к + '"><img src="img/' + i.id + '.webp" alt="" loading="lazy"><b>' + (unlocked ? fmt(i.price) + ' ₽' : экр(завод(i.z).name)) + '</b>' + экр(i.ru) + '<br><span style="color:var(--graphite)">' + экр(завод(i.z).name) + ' · ' + экр(i.art) + '</span></button>'; }).join('') : '<span style="font-size:12px;color:var(--graphite)">Других вариантов с ценой и фото пока нет</span>';
+        с2.r.after(div); return;
+      }
+      var p = e.target.closest('[data-pick]'); if (p) { к.зоны.forEach(function (z) { z[1].forEach(function (x) { if (x.к === p.dataset.for) x.id = p.dataset.pick; }); }); рисовать(); return; }
+      if (e.target.id === 'gkUnlock') { m.remove(); $('gate').hidden = false; return; }
+      if (e.target.id === 'gkAdd') {
+        к.зоны.forEach(function (z) { z[1].forEach(function (x) { if (x.id && x.n > 0) sel[x.id] = Math.min(9999, (sel[x.id] || 0) + x.n); }); });
+        сохранить(); tray(); apply();
+        e.target.textContent = '✓ В подборке'; e.target.disabled = true;
+        var ок = document.createElement('button'); ок.type = 'button'; ок.className = 'gh'; ок.textContent = 'Открыть подборку';
+        ок.addEventListener('click', function () { m.remove(); окноКП(sel, true); });
+        e.target.after(ок);
+      }
+    });
+    куда.addEventListener('change', function (e) {
+      var inp = e.target.closest('.q input'); if (!inp) return;
+      var с = слот(inp); с.x.n = Math.max(0, Math.min(99999, parseInt(inp.value, 10) || 0)); рисовать();
+    });
+  }
+
+  // ── ГАЛЕРЕЯ КАРТОЧКИ (Флора, задача Алексея 28.10.2026) ─────────────────────
+  // Кадры: главный (img/<id>_b.webp, 1400 px), ролики (v/), доп. ракурсы (g/<id>_<k>.webp, 1600 px).
+  // Сверку «та же машина» и выбор кадров делает каталог/галерея.py — здесь только показ.
+  function атр(t) { return String(t || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+  // Корень каталога для g/ и v/: на /catalog/ — пусто; английский.py переписывает строку 'img/' в
+  // '../../catalog/img/', и отсюда же берётся путь для g/ и v/ на /en/catalog/.
+  var КОРЕНЬ_КАТ = 'img/'.slice(0, -4);
+  // подписи — отдельными строками, чтобы английский.py переводил их по словарю
+  var ГТ = { смотреть: 'Смотреть видео', видео: 'видео', Видео: 'Видео', фото: 'фото', кадр: 'кадр', Кадр: 'Кадр', пред: 'Предыдущий кадр', след: 'Следующий кадр', весь: 'Открыть на весь экран', весьК: 'На весь экран', сек: 'с', закрыть: 'Закрыть' };
+  function кадры(i) {
+    // главный: 800 px уже в кэше от сетки — браузер берёт его на телефоне, 1400 px — на больших экранах
+    var к = [{ big: 'img/' + i.id + '_b.webp', mid: 'img/' + i.id + '.webp', sm: 'img/' + i.id + '.webp' }];
+    (i.v || []).forEach(function (v) { к.push({ vid: КОРЕНЬ_КАТ + 'v/' + v[0], big: КОРЕНЬ_КАТ + 'v/' + v[1], sm: КОРЕНЬ_КАТ + 'v/' + v[1].replace(/\.jpg$/, 's.jpg'), sec: v[2] }); });
+    for (var k = 2; k <= (i.g || 0) + 1; k++) к.push({ big: КОРЕНЬ_КАТ + 'g/' + i.id + '_' + k + '.webp', sm: КОРЕНЬ_КАТ + 'g/' + i.id + '_' + k + 's.webp' });
+    return к;
+  }
+  function слайды(i, к, весь) {
+    return к.map(function (s, j) {
+      return '<figure class="gal__s" data-j="' + j + '">' + (s.vid
+        ? (весь ? '<video src="' + s.vid + '" poster="' + s.big + '" controls playsinline muted preload="none"></video>'
+                : '<button type="button" class="gal__play" data-vid="' + s.vid + '" aria-label="' + ГТ.смотреть + '"><img src="' + s.big + '" alt="' + атр(i.ru) + ' — ' + ГТ.видео + '" loading="lazy" decoding="async"><span class="gal__pl">▶<small>' + (s.sec ? s.sec + ' ' + ГТ.сек : ГТ.видео) + '</small></span></button>')
+        : '<img src="' + s.big + '"' + (s.mid ? ' srcset="' + s.mid + ' 800w, ' + s.big + ' 1400w" sizes="' + (весь ? '100vw' : '(max-width: 900px) 100vw, 450px') + '"' : '') +
+          ' alt="' + атр(i.ru) + (j ? ' — ' + ГТ.кадр + ' ' + (j + 1) : '') + '"' + (j || весь ? ' loading="lazy"' : '') + ' decoding="async">') + '</figure>';
+    }).join('');
+  }
+  function стрелки(n, j) {
+    return n > 1 ? '<button type="button" class="gal__a gal__a--p" aria-label="' + ГТ.пред + '"' + (j ? '' : ' disabled') + '>‹</button><button type="button" class="gal__a gal__a--n" aria-label="' + ГТ.след + '"' + (j < n - 1 ? '' : ' disabled') + '>›</button><span class="gal__c">' + (j + 1) + ' / ' + n + '</span>' : '';
+  }
+  function галерея(i) {
+    var к = кадры(i), n = к.length;
+    return '<div class="modal__pic gal" data-n="' + n + '"><div class="gal__st"><div class="gal__tr">' + слайды(i, к, false) + '</div>' + стрелки(n, 0) +
+      '<button type="button" class="gal__fs" aria-label="' + ГТ.весь + '" title="' + ГТ.весьК + '">⤢</button></div>' +
+      (n > 1 ? '<div class="gal__th">' + к.map(function (s, j) {
+        return '<button type="button" class="gal__t' + (j ? '' : ' on') + (s.vid ? ' v' : '') + '" data-j="' + j + '" aria-label="' + (s.vid ? ГТ.Видео : ГТ.Кадр + ' ' + (j + 1)) + '"><img src="' + s.sm + '" alt="" loading="lazy" decoding="async"></button>';
+      }).join('') + '</div>' : '') + '</div>';
+  }
+  // Лента: свайп — родной прокруткой со snap, стрелки и миниатюры — прокруткой к кадру.
+  function лента(root, n, наСмену) {
+    var tr = root.querySelector('.gal__tr'), cur = 0, ждём = 0;
+    var cnt = root.querySelector('.gal__c'), пр = root.querySelector('.gal__a--p'), сл = root.querySelector('.gal__a--n');
+    function к(j, плавно) {
+      j = Math.max(0, Math.min(n - 1, j));
+      tr.scrollTo({ left: j * tr.clientWidth, behavior: плавно === false ? 'auto' : 'smooth' });
+      отметить(j);
+    }
+    function отметить(j) {
+      if (j === cur) return;
+      cur = j;
+      if (cnt) cnt.textContent = (j + 1) + ' / ' + n;
+      if (пр) пр.disabled = j === 0;
+      if (сл) сл.disabled = j === n - 1;
+      tr.querySelectorAll('video').forEach(function (v) { if (!v.paused && +v.closest('.gal__s').dataset.j !== j) v.pause(); });
+      if (наСмену) наСмену(j);
+    }
+    tr.addEventListener('scroll', function () {
+      clearTimeout(ждём);
+      ждём = setTimeout(function () { отметить(Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth))); }, 70);
+    }, { passive: true });
+    window.addEventListener('resize', function () { tr.scrollTo({ left: cur * tr.clientWidth, behavior: 'auto' }); });
+    return { к: к, cur: function () { return cur; }, tr: tr };
+  }
+  function играть(кн) {
+    var v = document.createElement('video');
+    v.src = кн.dataset.vid; v.poster = кн.querySelector('img').getAttribute('src');
+    v.controls = true; v.muted = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'auto';
+    кн.replaceWith(v);
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+  }
+  function завестиГалерею(root, i) {
+    if (!root) return;
+    var n = +root.dataset.n || 1, th = root.querySelectorAll('.gal__t');
+    var л = лента(root, n, function (j) {
+      th.forEach(function (t, q) { t.classList.toggle('on', q === j); });
+      if (th[j]) { var п = th[j].parentNode; п.scrollTo({ left: th[j].offsetLeft - п.clientWidth / 2 + th[j].clientWidth / 2, behavior: 'smooth' }); }
+    });
+    root._лента = л;
+    root.addEventListener('click', function (e) {
+      var a = e.target.closest('.gal__a'); if (a) { л.к(л.cur() + (a.classList.contains('gal__a--n') ? 1 : -1)); return; }
+      var t = e.target.closest('.gal__t'); if (t) { л.к(+t.dataset.j); return; }
+      var p = e.target.closest('.gal__play'); if (p) { играть(p); return; }
+      if (e.target.closest('.gal__fs') || (e.target.tagName === 'IMG' && e.target.closest('.gal__s'))) наВесьЭкран(i, л.cur(), root);
+    });
+  }
+  function наВесьЭкран(i, j0, откуда) {
+    var к = кадры(i), n = к.length;
+    var lb = document.createElement('div'); lb.className = 'lb';
+    lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', i.ru);
+    lb.innerHTML = '<div class="gal__tr">' + слайды(i, к, true) + '</div>' + стрелки(n, j0) + '<button type="button" class="lb__x" aria-label="' + ГТ.закрыть + '">×</button>';
+    document.body.appendChild(lb);
+    lb._откуда = откуда;
+    var л = лента(lb, n, function () { lb.querySelectorAll('img.z').forEach(function (im) { im.classList.remove('z'); }); });
+    lb._лента = л;
+    л.к(j0, false); л.tr.scrollLeft = j0 * л.tr.clientWidth;
+    lb.querySelector('.lb__x').focus();
+    lb.addEventListener('click', function (e) {
+      if (e.target.closest('.lb__x')) { закрытьВесь(lb); return; }
+      var a = e.target.closest('.gal__a'); if (a) { л.к(л.cur() + (a.classList.contains('gal__a--n') ? 1 : -1)); return; }
+      var im = e.target.tagName === 'IMG' && e.target.closest('.gal__s') ? e.target : null;
+      if (im) {
+        if (!im.classList.contains('z')) {
+          var r = im.getBoundingClientRect();
+          im.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+        }
+        im.classList.toggle('z');
+        return;
+      }
+      if (e.target.classList.contains('gal__s')) закрытьВесь(lb);    // клик по пустому полю — закрыть
+    });
+  }
+  function закрытьВесь(lb) {
+    var откуда = lb._откуда, j = lb._лента ? lb._лента.cur() : 0;
+    lb.remove();
+    if (откуда && откуда._лента) откуда._лента.к(j, false);
+  }
+  // Клавиатура: ← → листают, Esc закрывает верхнее окно (весь экран → карточка)
+  document.addEventListener('keydown', function (e) {
+    var т = e.target, ввод = т && (т.tagName === 'INPUT' || т.tagName === 'TEXTAREA' || т.tagName === 'SELECT' || т.isContentEditable);
+    var lbs = document.querySelectorAll('.lb'), lb = lbs[lbs.length - 1];
+    var ms = document.querySelectorAll('.modal'), m = ms[ms.length - 1];
+    if (e.key === 'Escape') {
+      if (lb) { закрытьВесь(lb); e.preventDefault(); return; }
+      if (m && !ввод) { m.remove(); e.preventDefault(); }
+      return;
+    }
+    if (ввод || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
+    var g = lb || (m && m.querySelector('.gal'));
+    if (!g || !g._лента) return;
+    g._лента.к(g._лента.cur() + (e.key === 'ArrowRight' ? 1 : -1));
+    e.preventDefault();
+  });
+
   function open(id) {
     var i = byId(id), z = D.zavody.filter(function (z) { return z.code === i.z; })[0];
     var m = document.createElement('div'); m.className = 'modal';
-    m.innerHTML = '<div class="modal__box"><button class="x" aria-label="Закрыть">×</button>' + (i.nophoto ? '<div class="modal__pic no" style="flex-direction:column;gap:10px;padding:30px;text-align:center"><b class="mono">' + i.art + '</b><span style="color:var(--graphite);font-size:13px">Фото этой позиции уточняем у фабрики — пришлём по запросу вместе с расчётом</span></div>' : '<div class="modal__pic"><img src="img/' + i.id + '.webp" alt=""></div>') + '<div class="modal__b">' +
+    m.innerHTML = '<div class="modal__box"><button class="x" aria-label="Закрыть">×</button>' + (i.nophoto ? '<div class="modal__pic no" style="flex-direction:column;gap:10px;padding:30px;text-align:center"><b class="mono">' + i.art + '</b><span style="color:var(--graphite);font-size:13px">Фото этой позиции уточняем у фабрики — пришлём по запросу вместе с расчётом</span></div>' : галерея(i)) + '<div class="modal__b">' +
       (i.cp ? '<div class="mono" style="color:var(--gold)">' + ((D.copies || []).filter(function (м) { return м.k === i.cp; })[0] || {}).n + '</div>' : '') +
       '<div class="mono"><b>' + z.name + '</b>' + (z.seg === 'prem' ? '<span class="pm" style="position:static;margin-left:8px">премиум</span>' : '') + '<i>·</i>' + i.art + '</div><h2>' + i.ru + '</h2>' + (i.en && i.en !== i.ru ? '<div style="color:var(--graphite)">' + i.en + '</div>' : '') +
       '<dl class="spec">' + (i.unit ? (i.dims ? '<dt>Варианты</dt><dd>' + i.dims + '</dd>' : '') + '<dt>Цена</dt><dd>за ' + (i.unit === 'шт' ? 'штуку' : i.unit === 'кг' ? 'килограмм' : 'квадратный метр') + ', фрахт по массе</dd>' : (i.dims ? '<dt>Габариты</dt><dd>' + i.dims.replace(/\*/g, ' × ') + ' мм</dd>' : '')) + (i.kg ? '<dt>Вес</dt><dd>' + i.kg + ' кг</dd>' : '') +
@@ -912,6 +1319,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       '<div class="big" style="filter:blur(6px)">000 000 ₽</div><button class="btn" id="mUnlock">Открыть цены</button>') +
       '</div><div class="sim" hidden></div></div>';
     document.body.appendChild(m);
+    завестиГалерею(m.querySelector('.gal'), i);
     похожие(i, m);
     m.addEventListener('click', function (e) {
       if (e.target === m || e.target.closest('.x')) { m.remove(); return; }
@@ -931,7 +1339,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202610280730', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202610281437', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
