@@ -5,7 +5,7 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 4790 позиций, 21 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-27)
+## Каталог: 4790 позиций, 21 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-10-28)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
@@ -16,10 +16,10 @@
 - [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 43 поз., от 73 700 ₽
 - [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 45 поз., от 18 700 ₽
 - [Тяги](https://chinasportshow.ru/catalog/c/row/) — 480 поз., от 6 900 ₽
-- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 92 поз., от 21 200 ₽
-- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 62 поз., от 83 800 ₽
+- [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 92 поз., от 21 300 ₽
+- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 62 поз., от 83 900 ₽
 - [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 45 поз., от 13 100 ₽
-- [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 104 поз., от 9 200 ₽
+- [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 104 поз., от 9 300 ₽
 - [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 856 поз., от 7 000 ₽
 - [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 201 поз., от 36 700 ₽
 - [Руки и плечи](https://chinasportshow.ru/catalog/c/arms/) — 295 поз., от 230 ₽
