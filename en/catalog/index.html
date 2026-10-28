@@ -199,6 +199,18 @@ a{color:inherit}
 .gk .note2{font-size:12px;color:var(--graphite);margin:10px 0 0}
 @media(max-width:760px){.gk{padding:18px 14px 0}.gk .r{grid-template-columns:52px minmax(0,1fr) auto;row-gap:6px}.gk .r img{width:52px;height:52px}.gk .r .q{grid-column:2}.gk .r .p{grid-column:3;grid-row:2}.gk .r .alt{grid-column:2/4;justify-self:start}
   .gk .tot{margin:16px -14px 0;padding:12px 14px}.gk-cta{flex-direction:column;align-items:stretch}}
+/* Тёмная тема (28.10.2026, «чёрное на чёрном, белое на белом»): в ней --ink светлый и равен --milk,
+   поэтому плашки «фон --ink, текст --milk» выходили белым по белому. Плашки держим тёмными явно,
+   выбранное — золотом с тёмным текстом; на золоте везде тёмный текст. Шапка тёмная в обеих темах. */
+.top .brand b{color:#EDEDE7}
+.top .search input,.top .search .cam,.top .cam{color:#EDEDE7}
+.top .ttl,.top a.back{color:#A9AEB3}
+.zmore,.more,.zfind,.f .price input,.bar select{color:var(--ink)}
+:root[data-theme="dark"] .gate__box p,:root[data-theme="dark"] .gate__box summary,:root[data-theme="dark"] .gate__box span,:root[data-theme="dark"] .gate__box .status:not(.warn):not(.ok){color:#A9AEB3}
+:root[data-theme="dark"] .seg button.on,:root[data-theme="dark"] .bar .share.ok,:root[data-theme="dark"] .card .sim,:root[data-theme="dark"] .fltBtn{background:var(--gold);border-color:var(--gold);color:#101315}
+:root[data-theme="dark"] .tray,:root[data-theme="dark"] .gate__box,:root[data-theme="dark"] .side__done,:root[data-theme="dark"] .gk .tot{background:#23282C;color:#E8E8E2}
+:root[data-theme="dark"] .btn,:root[data-theme="dark"] .gk-cta button,:root[data-theme="dark"] .gk .go,:root[data-theme="dark"] .card .ask,:root[data-theme="dark"] .zpick .tag,:root[data-theme="dark"] .f .tag,:root[data-theme="dark"] .card .pm,:root[data-theme="dark"] .fltBtn i{color:#101315}
+:root[data-theme="dark"] .gk-cta button:hover,:root[data-theme="dark"] .gk .go:hover{background:var(--gold-2);color:#101315}
 /* галерея карточки (Флора, 28.10.2026): лента со свайпом, миниатюры, весь экран, видео */
 .modal__pic.gal{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0;min-height:0}
 .gal__st{position:relative;width:100%;aspect-ratio:1/1;max-height:560px;background:var(--tile)}
@@ -483,7 +495,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('../../catalog/data.json?v=202610281959', { cache: 'no-cache' })
+  fetch('../../catalog/data.json?v=202610282019', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
     .then(function (d) { D = enD(d); init(); }, function () { $('cnt').textContent = 'The catalog did not load — please refresh the page'; });
 
@@ -1339,7 +1351,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610281959', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610282019', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
