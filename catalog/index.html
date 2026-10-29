@@ -495,7 +495,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('data.json?v=202610282019', { cache: 'no-cache' })
+  fetch('data.json?v=202610290730', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
     .then(function (d) { D = d; init(); }, function () { $('cnt').textContent = 'Каталог не загрузился — обновите страницу'; });
 
@@ -1351,7 +1351,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202610282019', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202610290730', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
