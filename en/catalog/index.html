@@ -444,6 +444,8 @@ var LEAD = {kind:'yc', url:'https://functions.yandexcloud.net/d4e6ubis8ni2eanh5c
 var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
 (function () {
   var D = null, sel = {}, view = [], shown = 0, PAGE = 60, unlocked = false, phRank = null, EMB = null;
+  // Подписи нужны уже первой карточке сетки, до инициализации галереи.
+  var ГТ = { смотреть: 'Watch video', видео: 'video', Видео: 'Video', фото: 'photos', кадр: 'image', Кадр: 'Image', пред: 'Previous image', след: 'Next image', весь: 'Open full screen', весьК: 'Full screen', сек: 'since', закрыть: 'Close' };
   var копияВыбрана = '';
   // catalog/#podborka — с главной «Открыть подборку»; запоминаем до того, как фильтры перепишут адрес
   var НА_ПОДБОРКУ = location.hash === '#podborka';
@@ -495,7 +497,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('../../catalog/data.json?v=202610290730', { cache: 'no-cache' })
+  fetch('../../catalog/data.json?v=202610300730', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
     .then(function (d) { D = enD(d); init(); }, function () { $('cnt').textContent = 'The catalog did not load — please refresh the page'; });
 
@@ -1190,8 +1192,6 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // Корень каталога для g/ и v/: на /catalog/ — пусто; английский.py переписывает строку '../../catalog/img/' в
   // '../../catalog/img/', и отсюда же берётся путь для g/ и v/ на /en/catalog/.
   var КОРЕНЬ_КАТ = '../../catalog/img/'.slice(0, -4);
-  // подписи — отдельными строками, чтобы английский.py переводил их по словарю
-  var ГТ = { смотреть: 'Watch video', видео: 'video', Видео: 'Video', фото: 'photos', кадр: 'image', Кадр: 'Image', пред: 'Previous image', след: 'Next image', весь: 'Open full screen', весьК: 'Full screen', сек: 'since', закрыть: 'Close' };
   function кадры(i) {
     // главный: 800 px уже в кэше от сетки — браузер берёт его на телефоне, 1400 px — на больших экранах
     var к = [{ big: '../../catalog/img/' + i.id + '_b.webp', mid: '../../catalog/img/' + i.id + '.webp', sm: '../../catalog/img/' + i.id + '.webp' }];
@@ -1351,7 +1351,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610290730', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('../../catalog/похожие.json?v=202610300730', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
