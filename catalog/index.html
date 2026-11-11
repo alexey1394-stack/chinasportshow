@@ -450,36 +450,14 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   // catalog/#podborka — с главной «Открыть подборку»; запоминаем до того, как фильтры перепишут адрес
   var НА_ПОДБОРКУ = location.hash === '#podborka';
   if (НА_ПОДБОРКУ) try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}   // выбранная метка «копия …»; общая для фильтра и адреса
-  function память() {
-    var v = null;
-    try { v = localStorage.getItem('cat_ok'); } catch (e) {}
-    if (!v && /(?:^|; )cat_ok=/.test(document.cookie)) { v = '{"again":1}'; try { localStorage.setItem('cat_ok', v); } catch (e) {} }
-    return v;
-  }
-  function запомнить(o) {
-    var v = JSON.stringify(o);
-    try { localStorage.setItem('cat_ok', v); } catch (e) {}
-    // в cookie — только отметка (она уходит на сервер с каждым запросом), телефон и почта остаются в localStorage
-    try { document.cookie = 'cat_ok=1; max-age=31536000; path=/; SameSite=Lax; Secure'; } catch (e) {}
-  }
-  // ключ из ссылки бота (?k=gt…): открываем и запоминаем — калитка через мессенджер, слово Алексея 22.09.2026
-  (function () {
-    // ?reset — забыть доступ (для проверки калитки: слово Алексея 22.09 «сразу показывает сайт»)
-    if (/[?&]reset\b/.test(location.search)) { try { localStorage.removeItem('cat_ok'); document.cookie = 'cat_ok=; max-age=0; path=/'; } catch (e) {} }
-    var k = (location.search.match(/[?&]k=(gt[a-z0-9]{6,})/) || [])[1];
-    if (k) { запомнить({ k: k, t: Date.now() }); try { var кп_ = (location.search.match(/[?&](kp=[A-Za-z0-9_.\-]+)/) || [])[1]; history.replaceState(null, '', location.pathname + (кп_ ? '?' + кп_ : '') + location.hash); } catch (e) {} }
-  })();
-  unlocked = !!память();
-  // Telegram-каталог (рация Боти 20.10, слово Алексея «Да, делай сейчас» 20.10.2026): страница
-  // открыта кнопкой в боте Авроры как мини-приложение. Клиент уже в нашем чате — цены открыты
-  // сразу, только позиции с ценой и фото, «Хочу КП» уходит с его Telegram без анкеты.
+  // Каталог и цены открыты всем без калитки, ключей и записи контакта при входе (Алексей, 10.11.2026).
+  unlocked = true;
   var TG = window.Telegram && Telegram.WebApp && Telegram.WebApp.initData ? Telegram.WebApp : null;
   var ТГ_КТО = TG && TG.initDataUnsafe && TG.initDataUnsafe.user || null;
   function тгКонтакт() { return !ТГ_КТО ? '' : ТГ_КТО.username ? '@' + ТГ_КТО.username : 'tg://user?id=' + ТГ_КТО.id; }
   if (TG) {
     try { TG.ready(); TG.expand(); } catch (e) {}
     document.documentElement.classList.add('tg');
-    if (!unlocked) { запомнить({ contact: тгКонтакт(), tg: ТГ_КТО && ТГ_КТО.id, t: Date.now() }); unlocked = true; }
   }
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.round(n).toLocaleString('ru-RU'); };
@@ -497,7 +475,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   $('fltBtn').addEventListener('click', function () { sideOn(true); });
   [$('sideBg'), $('sideX'), $('sideDone')].forEach(function (el) { el.addEventListener('click', function () { sideOn(false); }); });
 
-  fetch('data.json?v=202611100732', { cache: 'no-cache' })
+  fetch('data.json?v=202611110638', { cache: 'no-cache' })
     .then(function (r) { return r.json(); })
     .then(function (d) { D = d; init(); }, function () { $('cnt').textContent = 'Каталог не загрузился — обновите страницу'; });
 
@@ -789,8 +767,17 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       '</div></div>';
   }
   function draw(reset) {
+    var первая = shown === 0;
     var next = view.slice(shown, shown + PAGE); shown += next.length;
-    $('grid').insertAdjacentHTML('beforeend', next.map(card).join(''));
+    var html = next.map(card).join('');
+    if (первая) {
+      var n = 0;
+      html = html.replace(/<img loading="lazy" /g, function (m) {
+        n++;
+        return n <= 4 ? '<img loading="eager" fetchpriority="high" ' : n <= 12 ? '<img loading="eager" ' : m;
+      });
+    }
+    $('grid').insertAdjacentHTML('beforeend', html);
     $('more').hidden = shown >= view.length;
   }
   $('grid').addEventListener('click', function (e) {
@@ -1351,7 +1338,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   function списокПохожих() {
     if (SIM) return Promise.resolve(SIM);
     if (!SIM_ЖДЁМ) {
-      SIM_ЖДЁМ = fetch('похожие.json?v=202611100732', { cache: 'no-cache' })
+      SIM_ЖДЁМ = fetch('похожие.json?v=202611110638', { cache: 'no-cache' })
         .then(function (r) { return r.ok ? r.json() : {}; })
         .then(function (j) { SIM = j; return j; })
         .catch(function () { SIM = {}; return SIM; });
@@ -1381,8 +1368,7 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
   }
   // ── ЗАПРОС ЦЕНЫ ─────────────────────────────────────────────────
   // Позиция без суммы («цена по запросу», решение Алексея 17.10.2026): контакт —
-  // и заявка уходит менеджеру тем же каналом, что подборка. Контакт открывает цены,
-  // как калитка: человек его уже оставил.
+  // и заявка уходит менеджеру только по добровольному действию клиента. Для просмотра цен контакт не нужен.
   function запросЦены(ids) {
     var m = document.createElement('div'); m.className = 'modal';
     var поз = ids.map(byId).filter(Boolean);
@@ -1406,7 +1392,6 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
         note: 'КАТАЛОГ: запрос цены · ' + items.map(function (x) { return x.art; }).join(', '),
         hall: { size: 'запрос цены', zones: [], items: items, volume: 0, total: 0 }, total: 0, page: location.href };
       st.textContent = 'Отправляем…';
-      if (!unlocked) { запомнить({ contact: c, t: Date.now() }); unlocked = true; document.body.classList.remove('locked'); $('gate').hidden = true; apply(); }
       send(body).then(function () { f.innerHTML = '<div class="st"><b>Запрос у менеджера.</b> Alex ответит в рабочее время в течение 15 минут.</div>'; })
         .catch(function () { enqueue(body); st.textContent = 'Связь подвела — отправим сами, как только сеть вернётся. Срочно: Telegram @china_sport_show, MAX +7 (915) 771-69-81.'; });
     });
@@ -1426,23 +1411,6 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     return fetch(LEAD.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); });
   }
-  // дверь
-  // калитка: один контакт — Telegram или MAX (@ник или номер), цены открываются сразу
-  // (слово Алексея 22.09.2026: «человек оставил контакт и вернулся на сайт — видит цены»)
-  $('gateForm').addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var f = ev.target, st = $('gateStatus'), c = f.contact.value.trim();
-    function say(m, k) { st.textContent = m; st.className = 'status ' + k; }
-    var digits = c.replace(/\D/g, ''), nick = '';
-    if (digits.length < 10) { say('Нужен номер телефона.', 'warn'); return; }
-    if (!f.agree.checked) { say('Поставьте галочку согласия.', 'warn'); return; }
-    var phone = digits.length >= 10 ? (digits.length === 11 && digits[0] === '8' ? '7' + digits.slice(1) : digits) : '';
-    var body = { name: c, phone: phone, contact: 'Позвонить', city: '',
-                 note: 'ДОСТУП К КАТАЛОГУ ПО ТЕЛЕФОНУ (без мессенджера): ' + c, hall: null, total: null, page: location.href };
-    запомнить({ contact: c, t: Date.now() });
-    unlocked = true; document.body.classList.remove('locked'); $('gate').hidden = true; apply();
-    deliver(body);
-  });
   // подборка
   $('trayForm').addEventListener('submit', function (ev) {
     ev.preventDefault();
