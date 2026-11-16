@@ -5,7 +5,7 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 4799 позиций, 21 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-14)
+## Каталог: 4798 позиций, 21 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-14)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
@@ -20,7 +20,7 @@
 - [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 61 поз., от 90 300 ₽
 - [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 62 поз., от 14 100 ₽
 - [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 104 поз., от 10 000 ₽
-- [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 854 поз., от 7 600 ₽
+- [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 853 поз., от 7 600 ₽
 - [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 201 поз., от 39 500 ₽
 - [Руки и плечи](https://chinasportshow.ru/catalog/c/arms/) — 293 поз., от 250 ₽
 - [Жимы](https://chinasportshow.ru/catalog/c/press/) — 608 поз., от 17 800 ₽
@@ -43,7 +43,7 @@
 - [TZ Fitness (Tianzhan)](https://chinasportshow.ru/catalog/f/J/): Шаньдун, Дэчжоу · кардио, грузоблочные, нагружаемые, стойки и аксессуары (728 поз.)
 - [Brightway (BRTW)](https://chinasportshow.ru/catalog/f/K/): Шаньдун · грузоблочная серия TY (35 поз.)
 - [Langmai](https://chinasportshow.ru/catalog/f/M/): Шаньдун, Дэчжоу · кардио: дорожки, степперы-лестницы, эллипсы, велосипеды, гребные (44 поз.)
-- [Rosen (Shandong Rili)](https://chinasportshow.ru/catalog/f/N/) — премиум: Шаньдун · грузоблочные и нагружаемые линейки верхнего сегмента, кардио (190 поз.)
+- [Rosen (Shandong Rili)](https://chinasportshow.ru/catalog/f/N/) — премиум: Шаньдун · грузоблочные и нагружаемые линейки верхнего сегмента, кардио (189 поз.)
 - [MBH](https://chinasportshow.ru/catalog/f/MBH/): Шаньдун · грузоблочные линейки, рамы, мультистанции (167 поз.)
 - [Likanglai](https://chinasportshow.ru/catalog/f/LIKANGLAI/): Дэчжоу · кардио, грузоблочные и нагружаемые линии, рамы, мультистанции (349 поз.)
 - [Insight](https://chinasportshow.ru/catalog/f/INSIGHT/): Циндао · нагружаемые DH/SH/FH, грузоблочные RE80, стойки и свободный вес (98 поз.)
