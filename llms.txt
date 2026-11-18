@@ -5,7 +5,7 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 4801 позиций, 22 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-17)
+## Каталог: 4801 позиций, 22 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-18)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
@@ -13,15 +13,15 @@
 - [Покрытие и маты](https://chinasportshow.ru/catalog/c/floor/) — 60 поз., от 1 080 ₽
 - [Аксессуары и детали](https://chinasportshow.ru/catalog/c/access/) — 56 поз., от 220 ₽
 - [Беговые дорожки](https://chinasportshow.ru/catalog/c/tread/) — 150 поз., от 44 100 ₽
-- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 43 поз., от 79 900 ₽
-- [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 45 поз., от 20 200 ₽
+- [Эллипсы](https://chinasportshow.ru/catalog/c/ellip/) — 43 поз., от 79 800 ₽
+- [Гребные, лыжные, аэробайки](https://chinasportshow.ru/catalog/c/rowski/) — 45 поз., от 20 100 ₽
 - [Тяги](https://chinasportshow.ru/catalog/c/row/) — 480 поз., от 7 400 ₽
 - [Велотренажёры](https://chinasportshow.ru/catalog/c/bike/) — 90 поз., от 23 000 ₽
-- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 61 поз., от 90 600 ₽
+- [Лестницы и степперы](https://chinasportshow.ru/catalog/c/stair/) — 61 поз., от 90 500 ₽
 - [Реформеры и станции](https://chinasportshow.ru/catalog/c/pilates/) — 62 поз., от 14 200 ₽
 - [Турники и брусья](https://chinasportshow.ru/catalog/c/dipchin/) — 104 поз., от 10 000 ₽
 - [Ноги](https://chinasportshow.ru/catalog/c/legs/) — 853 поз., от 7 600 ₽
-- [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 201 поз., от 39 700 ₽
+- [Ягодичные](https://chinasportshow.ru/catalog/c/glute/) — 201 поз., от 39 600 ₽
 - [Руки и плечи](https://chinasportshow.ru/catalog/c/arms/) — 293 поз., от 250 ₽
 - [Жимы](https://chinasportshow.ru/catalog/c/press/) — 608 поз., от 17 900 ₽
 - [Тяги](https://chinasportshow.ru/catalog/c/row/) — 480 поз., от 7 400 ₽
