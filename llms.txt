@@ -5,7 +5,7 @@
 > (35 производство + 35 доставка), оплата 87 % / 13 %. Комплектуем контейнер позициями разных фабрик, собираем залы
 > от 150 до 4 000 м², в России — своя сервисная служба (профилактика и ремонт тренажёров).
 
-## Каталог: 4801 позиций, 22 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-21)
+## Каталог: 4802 позиций, 22 фабрик, цены в Москве с НДС (по курсу ЦБ на 2026-11-21)
 Интерактивный каталог: https://chinasportshow.ru/catalog/ (фильтры по фабрике, категории, сегменту, цене; поиск по фото).
 Статические страницы для чтения: категории https://chinasportshow.ru/catalog/c/, фабрики https://chinasportshow.ru/catalog/f/, карточка позиции https://chinasportshow.ru/catalog/i/<id>/.
 
@@ -29,14 +29,14 @@
 - [Скамьи](https://chinasportshow.ru/catalog/c/bench/) — 214 поз., от 8 300 ₽
 - [Мультистанции и кроссоверы](https://chinasportshow.ru/catalog/c/multi/) — 330 поз., от 2 290 ₽
 - [Гантели, грифы и стойки](https://chinasportshow.ru/catalog/c/dumb/) — 174 поз., от 220 ₽
-- [Диски и стеллажи](https://chinasportshow.ru/catalog/c/plate/) — 43 поз., от 190 ₽
+- [Диски и стеллажи](https://chinasportshow.ru/catalog/c/plate/) — 44 поз., от 190 ₽
 - [Рамы, стойки, помосты](https://chinasportshow.ru/catalog/c/rack/) — 110 поз., от 4 710 ₽
 - [Функциональный тренинг](https://chinasportshow.ru/catalog/c/func/) — 37 поз., от 790 ₽
 - [Прочее](https://chinasportshow.ru/catalog/c/other/) — 508 поз., от 1 370 ₽
 
 ### Фабрики
 - [Shuyoute (SYT)](https://chinasportshow.ru/catalog/f/A/): Шаньдун · коммерческое кардио, грузоблочные, свободный вес, пилатес (858 поз.)
-- [MND Fitness](https://chinasportshow.ru/catalog/f/B/): Шаньдун · грузоблочные и нагружаемые машины, кардио, аксессуары (1245 поз.)
+- [MND Fitness](https://chinasportshow.ru/catalog/f/B/): Шаньдун · грузоблочные и нагружаемые машины, кардио, аксессуары (1246 поз.)
 - [Guwow](https://chinasportshow.ru/catalog/f/C/): Шаньдун · коммерческое кардио и грузоблочные, полная линейка (213 поз.)
 - [Juren (JR)](https://chinasportshow.ru/catalog/f/D/): Шаньдун · грузоблочные и нагружаемые машины, свободный вес (281 поз.)
 - [Relax Fitness](https://chinasportshow.ru/catalog/f/H/) — премиум: Шаньдун · грузоблочные линейки, кардио (459 поз.)
