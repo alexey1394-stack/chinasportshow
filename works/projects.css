@@ -141,3 +141,5 @@
 }
 
 .css-project-detail--text{grid-template-columns:1fr}
+
+.css-project-model-photos{display:grid;align-content:start;gap:14px;min-width:0}
