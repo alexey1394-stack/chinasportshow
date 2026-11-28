@@ -408,6 +408,20 @@ section{padding:96px 0}
   .jr__hint{display:none}
   .jr__veil{background:linear-gradient(0deg,rgba(22,24,26,.97) 0%,rgba(22,24,26,.85) 45%,rgba(22,24,26,.25) 100%)}
 }
+@media(max-width:900px){
+  .jr.is-mobile-film .jr__road{position:absolute;inset:auto 0 0;padding:0 16px max(12px,env(safe-area-inset-bottom))}
+  .jr.is-mobile-film .jr__nav{display:flex;justify-content:center;margin:4px 0 0}
+  .jr.is-mobile-film .jr__stops{margin:0;gap:4px}
+  .jr.is-mobile-film .jr__stops li{height:44px;display:flex;align-items:center;justify-content:center}
+  .jr.is-mobile-film .jr__stops li::before,.jr.is-mobile-film .jr__stops li i{top:calc(50% - 1px)}
+}
+@media(max-width:900px) and (max-height:680px){
+  .jr.is-mobile-film .jr__top{padding:24px 16px 0}
+  .jr.is-mobile-film .jr__title{font-size:clamp(1.55rem,7vw,2.2rem);min-height:0;margin:9px 0}
+  .jr.is-mobile-film .jr__text{font-size:.9rem;min-height:0;line-height:1.35}
+  .jr.is-mobile-film .jr__fee{margin-top:10px;padding:8px 10px}
+  .jr.is-mobile-film .jr__road svg{max-height:34px}
+}
 @media(prefers-reduced-motion:reduce){
   .jr__bg img.on{animation:none}
   .jr__road *{transition:none!important;animation:none!important}
@@ -549,6 +563,8 @@ a.tk:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 .gal figure{margin:0;background:var(--bg);position:relative;overflow:hidden;aspect-ratio:4/3}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .gal figure:hover img{transform:scale(1.04)}
+.gal__link{position:absolute;inset:0;z-index:1}
+.gal__link:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;
   background:linear-gradient(to top,rgba(22,24,26,.86),rgba(22,24,26,0));color:var(--milk)}
 .gal figcaption b{display:block;font-family:var(--f-h);font-weight:500;font-size:15px;
@@ -2891,7 +2907,7 @@ run();
   g.innerHTML = PH.projects.map(function (p, i) {
     // первые две плитки широкие и попадают на экран сразу — их грузим без lazy,
     // иначе на медленной сети они дольше всех висят пустыми
-    return '<figure><img' + (i < 2 ? '' : ' loading="lazy"') + ' decoding="async" src="' + p.img +
+    return '<figure><a class="gal__link" href="/works/" aria-label="Проекты"></a><img' + (i < 2 ? '' : ' loading="lazy"') + ' decoding="async" src="' + p.img +
       '" alt="' + p.t + '">' +
       '<figcaption><b>' + p.t + '</b><span>' + p.n + '</span></figcaption></figure>';
   }).join('');
@@ -4367,7 +4383,7 @@ root.addEventListener('pointermove', function (ev) {
 root.addEventListener('pointerleave', function () { bg.style.transform = ''; });
 
 function to(i) { i = (i + N) % N; if (goFilm) goFilm(i); else show(i); }
-function stepBy(d) { тронулись(); to(cur + d); }
+function stepBy(d) { тронулись(); to((цельШага === null ? cur : цельШага) + d); }
 // первый же клик включает быстрый ход: человек показал, что хочет двигаться
 var БЫСТРО = 2100, разогнали = false;
 function тронулись() {
@@ -4412,7 +4428,7 @@ if ('IntersectionObserver' in window) {
    шесть кусков, шесть шагов. Блок встаёт на экран (sticky), прокрутка страницы
    ведёт время фильма; шаг, день, комиссия и тренажёр на дороге идут за кадром.
    Телефон и «меньше движения» — прежняя лента из фото. Нет файла — тоже лента. */
-var goFilm = null;
+var goFilm = null, цельШага = null;
 var FILM = { src: 'film/путь.mp4', poster: 'film/путь.jpg', cut: [0, 11.5, 20, 26.5, 35.5, 42.5] };
 if (window.matchMedia && matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)').matches) {
   var fv = document.createElement('video');
@@ -4483,34 +4499,48 @@ function startFilm(v, D, seek) {
   root.parentNode.insertBefore(box, root); box.appendChild(root);
   box.style.height = (100 + 80 * N) + 'vh';
   root.classList.add('is-film');
+  if (v.tagName === 'CANVAS') {
+    root.classList.add('is-mobile-film');
+    root.querySelector('.jr__road').appendChild(root.querySelector('.jr__nav'));
+  }
   // цифры под лентой выносим под фильм, чтобы экран блока не переполнялся
   var fw = root.querySelector('.jr__factswrap');
   if (fw) { var fs = document.createElement('section'); fs.className = 'jr jr--facts'; fs.appendChild(fw); box.parentNode.insertBefore(fs, box.nextSibling); }
   var hint = root.querySelector('.jr__hint'); if (hint) hint.textContent = 'листайте — фильм идёт за прокруткой';
 
-  function prog() { var r = box.getBoundingClientRect(), h = r.height - innerHeight; return h > 0 ? Math.min(1, Math.max(0, -r.top / h)) : 0; }
+  function ходПрокрутки(r) { return Math.max(0, r.height - root.getBoundingClientRect().height); }
+  function prog() { var r = box.getBoundingClientRect(), h = ходПрокрутки(r); return h > 0 ? Math.min(1, Math.max(0, -r.top / h)) : 0; }
   function stepAt(t) { var i = 0; for (var k = 1; k < N; k++) if (t >= CUT[k]) i = k; return i; }
   function along(t) {                        // 0…N-1: где тренажёр на дороге в момент t
     var i = stepAt(t); if (i >= N - 1) return N - 1;
     return i + Math.min(1, (t - CUT[i]) / (CUT[i + 1] - CUT[i]));
   }
-  var tgt = 0, now = 0, raf = 0;
+  var tgt = 0, now = 0, raf = 0, цельВремени = 0;
   function tick() {
     raf = 0;
     now += (tgt - now) * 0.2; if (Math.abs(tgt - now) < 0.01) now = tgt;
     seek(now);
     var i = stepAt(now); if (i !== cur) show(i, true);
     placeCar(X0 + (X1 - X0) * along(now) / (N - 1));
+    if (цельШага !== null && Math.abs(tgt - цельВремени) < 0.04 && i === цельШага) цельШага = null;
     if (now !== tgt) raf = requestAnimationFrame(tick);
   }
-  function onScroll() { tgt = prog() * END; if (!raf) raf = requestAnimationFrame(tick); }
+  function onScroll() {
+    tgt = prog() * END;
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+  function ручнаяПрокрутка() { цельШага = null; }
+  addEventListener('touchmove', ручнаяПрокрутка, { passive: true });
+  addEventListener('wheel', ручнаяПрокрутка, { passive: true });
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', onScroll);
   // щелчок по шагу, стрелки, тренажёр рукой — прокручиваем страницу к нужному месту фильма
   goFilm = function (i) {
     i = Math.max(0, Math.min(N - 1, i));
-    var r = box.getBoundingClientRect(), t = Math.min(END, CUT[i] + 0.4);
-    scrollTo({ top: scrollY + r.top + (t / END) * (r.height - innerHeight), behavior: 'smooth' });
+    цельШага = i;
+    цельВремени = Math.min(END, CUT[i] + 0.4);
+    var r = box.getBoundingClientRect();
+    scrollTo({ top: scrollY + r.top + (цельВремени / END) * ходПрокрутки(r), behavior: 'smooth' });
   };
   onScroll();
 }
@@ -4647,10 +4677,20 @@ var C = (typeof LEAD === 'object' && LEAD) || {};
     var headers = { 'Content-Type': 'application/json' };
     if (C.kind !== 'yc') { headers.apikey = C.anon; headers.Authorization = 'Bearer ' + C.anon; headers.Prefer = 'return=minimal'; }
     b.disabled = true; say('Отправляем…', true);
-    fetch(url, { method: 'POST', headers: headers, body: JSON.stringify(body) })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); })
-      .then(function () { say('Принято. Свяжемся в рабочее время в течение 15 минут.', true); f.reset(); b.disabled = false; })
-      .catch(function () { say('Не отправилось — позвоните 8 (915) 771-69-81 или напишите в MAX.', false); b.disabled = false; });
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, 75000);
+    fetch(url, { method: 'POST', headers: headers, body: JSON.stringify(body), signal: controller.signal })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        if (C.kind === 'yc') return r.json().then(function (result) {
+          if (result.ok !== true || typeof result.id !== 'string' || !result.id.trim()) {
+            throw new Error('Missing lead receipt');
+          }
+        });
+      })
+      .then(function () { say('Принято. Свяжемся в рабочее время в течение 15 минут.', true); f.reset(); })
+      .catch(function () { say('Подтверждение не пришло. Позвоните 8 (915) 771-69-81 или напишите в MAX.', false); })
+      .finally(function () { clearTimeout(timer); b.disabled = false; });
   });
 })();
 
