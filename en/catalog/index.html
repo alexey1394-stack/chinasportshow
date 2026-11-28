@@ -492,7 +492,14 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     // Фабрик стало под семьдесят (17.10.2026): сверху наш выбор, потом фабрики с ценами
     // в прежнем порядке, ниже — работающие только по каталогу («цена по запросу»).
     var сЦеной = {}; D.items.forEach(function (i) { if (i.price) сЦеной[i.z] = 1; });
+    var первыеФабрики = ['H', 'SHUA', 'I', 'B', 'J', 'A', 'M', 'K'];
     var заводы = D.zavody.map(function (z, n) { return [z, n]; }).sort(function (a, b) {
+      var приоритетА = первыеФабрики.indexOf(a[0].code);
+      var приоритетБ = первыеФабрики.indexOf(b[0].code);
+      if (приоритетА !== -1 || приоритетБ !== -1) {
+        return (приоритетА === -1 ? первыеФабрики.length : приоритетА)
+          - (приоритетБ === -1 ? первыеФабрики.length : приоритетБ);
+      }
       var ka = a[0].code === ВЫБОР ? 0 : сЦеной[a[0].code] ? 1 : 2, kb = b[0].code === ВЫБОР ? 0 : сЦеной[b[0].code] ? 1 : 2;
       return (ka - kb) || (ka === 2 ? (cz[b[0].code] || 0) - (cz[a[0].code] || 0) : a[1] - b[1]);
     }).map(function (x) { return x[0]; });
