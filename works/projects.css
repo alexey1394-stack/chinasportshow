@@ -143,3 +143,55 @@
 .css-project-detail--text{grid-template-columns:1fr}
 
 .css-project-model-photos{display:grid;align-content:start;gap:14px;min-width:0}
+
+.project-cost{margin:24px 0 36px;border:1px solid var(--rule);border-radius:14px;background:var(--paper-2);overflow:hidden}
+.project-cost__header{padding:clamp(16px,3vw,28px);display:grid;grid-template-columns:1fr auto;gap:12px 20px;align-items:start;border-bottom:1px solid var(--rule)}
+.project-cost__header h2{font-size:clamp(23px,4vw,34px);line-height:1.1;margin:0 0 8px}
+.project-cost__header p,.project-cost__note{color:var(--graphite);margin:0}
+.project-cost__amount{display:block;font:600 clamp(27px,4vw,42px)/1.1 var(--f-h);color:var(--ink);white-space:nowrap}
+.project-cost__vat{display:block;text-align:right;font-size:13px;color:var(--graphite)}
+.project-cost__groups{padding:6px clamp(12px,3vw,26px)}
+.project-cost details{border-bottom:1px solid var(--rule)}
+.project-cost summary{cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 9px;padding:12px 2px;list-style:none}
+.project-cost summary::-webkit-details-marker{display:none}
+.project-cost summary strong::before{content:"+";display:inline-block;width:1.1em;color:var(--gold)}
+.project-cost details[open] summary strong::before{content:"−"}
+.project-cost summary small{grid-column:1/-1;color:var(--graphite);padding-left:1.1em}
+.project-cost summary b{white-space:nowrap}
+.project-cost table{width:100%;border-collapse:collapse;table-layout:fixed;margin:0 0 10px;font-size:14px}
+.project-cost th,.project-cost td{text-align:left;padding:8px 4px;border-top:1px solid var(--rule);vertical-align:top;overflow-wrap:anywhere}
+.project-cost td:nth-child(2),.project-cost td:nth-child(3),.project-cost td:nth-child(4){font-variant-numeric:tabular-nums}
+.project-cost th:first-child{width:43%}
+.project-cost td small{display:block;color:var(--graphite)}
+.project-cost__reconcile{margin:14px 0 0;padding:0 2px;font-size:14px}
+.project-cost__reconcile div{display:flex;justify-content:space-between;gap:8px;margin:0 0 5px}
+.project-cost__reconcile dd{margin:0;white-space:nowrap;font-weight:600}
+.project-cost__note{padding:14px clamp(12px,3vw,26px) 18px;font-size:14px}
+@media(max-width:500px){
+ .project-cost__header{grid-template-columns:1fr}
+ .project-cost__vat{text-align:left}
+ .project-cost table{font-size:12px}
+ .project-cost th:first-child{width:39%}
+}
+.project-map{margin:22px 0 28px}
+.project-map__stage{position:relative;background:#151c20;border-radius:16px;aspect-ratio:1280/702;min-height:190px;color:#fff}
+.project-map__stage img{width:100%;height:100%;position:absolute;inset:0;border-radius:inherit}
+.project-map__caption{display:block;font-size:12px;color:var(--graphite);margin:6px 0 12px}
+.project-map__pin{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%);width:44px;height:44px;text-decoration:none;color:#fff}
+.project-map__pin::after{content:"";height:12px;width:12px;border:2px solid #ffdf98;border-radius:50%;background:#ffe0a0;box-shadow:0 0 9px #efb542,0 0 22px #e3ab47}
+.project-map__pin:hover::after,.project-map__pin[aria-expanded=true]::after{background:#fff8df;box-shadow:0 0 12px #ffd778,0 0 26px #e3ab47}
+.project-map__pin:focus-visible{outline:2px solid #ffdf98;outline-offset:-4px;border-radius:100%}
+.project-map__pin span{pointer-events:none;position:absolute;top:40px;left:50%;transform:translateX(-50%);background:#151c20;color:#fff;white-space:nowrap;padding:2px 5px;border-radius:4px;font-size:clamp(10px,1.4vw,14px)}
+.project-map__pin[data-area=vladimir] span{top:auto;bottom:39px}
+.project-map__choice{border:1px solid var(--rule);border-radius:12px;padding:12px 15px;background:var(--paper-2);margin-top:10px}
+.project-map__choice[hidden]{display:none}
+.project-map__choice h2{font-size:19px;margin:0 0 5px}
+.project-map__choice ul{padding-left:19px;margin:0}
+.project-map__choice li{margin:5px 0}
+.project-map__choice li span,.project-card__value{display:block;color:var(--graphite);font-size:13px}
+.project-card__value b{color:var(--ink);font-size:16px}
+@media(max-width:580px){
+ .project-map__pin[data-area=vladimir]{margin-left:20px;margin-top:-13px}
+ .project-map__pin[data-area=vladimir]::before{content:"";width:24px;height:1px;background:#e6ca80;position:absolute;right:21px;top:25px;transform:rotate(-30deg);transform-origin:right}
+ .project-map__pin[data-area=mesyagutovo] span{left:auto;right:-6px;transform:none}
+}
