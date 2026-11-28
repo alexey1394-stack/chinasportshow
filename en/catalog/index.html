@@ -703,10 +703,10 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
       var b64 = c.toDataURL('image/jpeg', 0.85);
       Promise.all([
         fetch(PHOTO.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image: b64 }) }).then(function (r) { return r.json(); }),
-        EMB ? Promise.resolve(EMB) : Promise.all([fetch('../../catalog/emb.json').then(function (r) { return r.json(); }), fetch('../../catalog/emb.bin').then(function (r) { return r.arrayBuffer(); })]).then(function (a) { EMB = { ids: a[0].ids, dim: a[0].dim, q: new Int8Array(a[1]) }; return EMB; })
+        EMB ? Promise.resolve(EMB) : Promise.all([fetch('../../catalog/emb.json?v=20261128-withdraw-2').then(function (r) { return r.json(); }), fetch('../../catalog/emb.bin?v=20261128-withdraw-2').then(function (r) { return r.arrayBuffer(); })]).then(function (a) { EMB = { ids: a[0].ids, dim: a[0].dim, q: new Int8Array(a[1]) }; return EMB; })
       ]).then(function (r) {
         var v = r[0].v; if (!v) throw new Error(r[0].error || 'no response');
-        if (v.length !== r[1].dim) throw new Error('photo search is updating, please try again in a few minutes');
+        if (v.length !== r[1].dim || r[1].q.length !== r[1].ids.length * r[1].dim) throw new Error('photo search is updating, please try again in a few minutes');
         var e = r[1], n = e.ids.length, d = e.dim, sc = [];
         for (var i = 0; i < n; i++) { var dot = 0, o = i * d; for (var j = 0; j < d; j++) dot += v[j] * e.q[o + j]; sc.push([dot / 127, e.ids[i]]); }
         sc.sort(function (a, b) { return b[0] - a[0]; });
