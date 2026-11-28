@@ -451,6 +451,8 @@ section{padding:96px 0}
 .tks{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);
   border:1px solid var(--rule);margin-top:44px}
 .tk{background:var(--bg);display:flex;flex-direction:column}
+a.tk{text-decoration:none}
+a.tk:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 .tk__pic{aspect-ratio:16/9;overflow:hidden;background:var(--wash)}
 .tk__pic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .tk:hover .tk__pic img{transform:scale(1.03)}
@@ -934,7 +936,7 @@ input[type=range]{width:100%;accent-color:var(--gold);margin:6px 0}
       <a href="#zony">Zones</a>
       <a href="catalog/">Catalogue</a>
       <a href="../blog/">Blog</a>
-      <a href="#proekty">Projects</a>
+      <a href="/works/">Projects</a>
       <a href="#dogruzka">Groupage</a><a href="#servis">Service</a>
       <a href="#kontakty">Contacts</a>
     </nav>
@@ -2909,15 +2911,17 @@ var TURNKEY = [
     var sum = have.reduce(function (s, p) { return s + byKind(p[0]).rub * p[1]; }, 0);
     var n = have.reduce(function (s, p) { return s + p[1]; }, 0);
     var ph = PH.hits[i] || PH.zones[t.zone];
-    return '<article class="tk">' +
+    var showProjects = t.preset === 'studio';
+    return (showProjects ? '<a class="tk" href="/works/" aria-labelledby="pilates-projects">' : '<article class="tk">') +
       (ph ? '<div class="tk__pic"><img loading="lazy" src="' + ph.img + '" alt="' + t.name + '"></div>' : '') +
       '<div class="tk__b"><div class="tk__tag">' + t.tag + '</div>' +
-      '<h3>' + t.name + '</h3><p>' + t.text + '</p>' +
+      '<h3' + (showProjects ? ' id="pilates-projects"' : '') + '>' + t.name + '</h3><p>' + t.text + '</p>' +
       '<div class="tk__price"><div class="v">' + money(sum) + '</div>' +
       '<div class="n">' + n + ' ' + plural(n, 'item', 'items', 'items') +
       ' · factory price plus our 15 %</div></div>' +
-      '<button class="btn btn--sm" data-preset="' + t.preset + '">Build in the planner</button>' +
-      '</div></article>';
+      (showProjects ? '<span class="btn btn--sm">View projects</span>' :
+        '<button class="btn btn--sm" data-preset="' + t.preset + '">Build in the planner</button>') +
+      '</div>' + (showProjects ? '</a>' : '</article>');
   }).join('');
 
   h.addEventListener('click', function (ev) {

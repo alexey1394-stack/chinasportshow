@@ -1,0 +1,143 @@
+#proekty, #otzyvy, #dogruzka, #project-locations { scroll-margin-top: 92px; }
+.css-project-shortcuts, .css-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin: 22px 0;
+}
+.css-project-shortcuts a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 13px;
+  background: #f5f1e8;
+  color: #312818;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.css-project-shortcuts a:hover { background: #fff; }
+.css-projects, .css-project-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+}
+.css-project-card, .css-project-result {
+  padding: clamp(18px, 3vw, 28px);
+  background: var(--paper-2);
+}
+.css-project-card { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.css-project-card h2, .css-project-card h3, .css-project-result h3 { line-height: 1.1; }
+.css-project-card h2, .css-project-card h3 { font-size: clamp(22px, 3vw, 34px); }
+.css-project-card a, .css-project-result a { text-underline-offset: 4px; }
+.css-project-card p, .css-project-result p { margin: 0; }
+.css-project-card .css-project-open { margin-top: auto; color: #664914; font-weight: 600; }
+.css-project-stage {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #b8cab5;
+  color: #2c522f;
+  background: #e5ece3;
+  font: 600 13px/1.35 var(--f-b);
+}
+.css-project-stage[data-partial="true"] { border-color: #ddc79f; color: #684916; background: #f4eddd; }
+.css-project-stage[data-delivered="true"] { border-color: #c1ccd3; color: #344753; background: #e9edf0; }
+.css-review-section { margin-bottom: 40px; }
+.css-review-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: clamp(20px, 4vw, 54px);
+  align-items: start;
+}
+.css-review-video {
+  margin: 0;
+  padding: clamp(12px, 2vw, 20px);
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+.css-review-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #1d1d1a;
+}
+.css-review-video figcaption { margin-top: 12px; font-weight: 600; }
+.css-review-video a { display: inline-block; margin-top: 8px; text-underline-offset: 3px; }
+.css-review-quote { margin: 0 0 25px; padding: 3px 0 3px 15px; border-left: 2px solid var(--gold); }
+.css-review-quote p { margin: 0 0 6px; font-size: clamp(18px, 2vw, 24px); line-height: 1.3; }
+.css-review-quote cite { font-style: normal; font-size: 14px; color: #555b60; }
+.css-project-results { margin-top: 14px; grid-template-columns: 1fr; }
+.css-project-result h4 { margin: 0 0 5px; font-size: 17px; }
+.css-project-page { max-width: 1100px; }
+.css-project-page h1 { font-size: clamp(30px, 5vw, 55px); }
+.css-project-page .css-project-title { margin: 22px 0; }
+.css-project-title h1 { margin: 8px 0 12px; }
+.css-project-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr);
+  gap: 22px;
+  margin: 22px 0;
+  align-items: start;
+}
+.css-project-detail h2 { font-size: clamp(21px, 3.5vw, 32px); line-height: 1.1; margin: 8px 0; }
+.css-project-order { padding: 18px; border: 1px solid var(--rule); margin-bottom: 14px; }
+.css-project-order p { margin: 9px 0; }
+.css-project-order ul { margin: 10px 0; padding-left: 1.25rem; }
+.css-project-order li + li { margin-top: 5px; }
+.css-project-order a { text-underline-offset: 3px; }
+.css-project-photo { margin: 0; border: 1px solid var(--rule); background: var(--paper-2); }
+.css-project-photo img { display: block; width: 100%; max-height: 325px; object-fit: contain; background: #fafafa; }
+.css-project-photo figcaption { padding: 8px 12px; font-size: 13px; }
+.css-project-nav a { display: inline-flex; align-items: center; min-height: 36px; }
+.css-container-offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin: 0 0 28px;
+  padding: 14px 18px;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+.css-container-offer h2 { margin: 0 0 5px; font-size: clamp(20px, 3vw, 28px); }
+.css-container-offer p { margin: 0; max-width: 57ch; }
+.css-container-offer a, .css-price-example summary { padding-block: 6px; text-underline-offset: 3px; }
+.css-price-example { margin-top: 16px; }
+.css-price-example summary { cursor: pointer; width: fit-content; font-weight: 600; }
+.css-catalog-entry { display: flex; flex-wrap: wrap; gap: 8px 12px; margin: 0 0 14px; }
+.css-catalog-entry a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 12px;
+  color: var(--ink);
+  background: var(--paper-2, var(--paper));
+  border: 1px solid var(--rule);
+  text-underline-offset: 3px;
+}
+.css-model-projects { margin: 28px 0; padding: 16px 18px; border: 1px solid var(--rule); }
+.css-model-projects h2 { margin: 0 0 12px; }
+.css-model-projects ul { margin: 0; padding: 0; list-style: none; }
+.css-model-projects li + li { margin-top: 10px; }
+.css-model-projects a, .css-modal-project { font-weight: 600; text-underline-offset: 3px; }
+.css-model-projects span { display: block; font-size: 14px; color: var(--graphite); }
+.css-modal-project { display: inline-block; margin: 0 0 10px; }
+.css-model-delivery { display: inline-block; margin-left: .25em; font-size: .88em; }
+.css-how-layout { display: grid; grid-template-columns: minmax(185px, .8fr) minmax(0, 1.6fr); gap: 24px; }
+.css-how-video { min-width: 0; padding: 14px; background: var(--paper-2); border: 1px solid var(--rule); }
+.css-how-video h2 { margin: 0 0 12px; }
+.css-how-video video { display: block; width: 100%; aspect-ratio: 9 / 16; max-height: 68vh; background: #20201e; }
+.css-how-layout .steps { margin-top: 0; }
+@media (max-width: 690px) {
+  .css-projects, .css-review-layout, .css-project-detail, .css-how-layout { grid-template-columns: 1fr; }
+  .css-project-shortcuts { margin: 13px 0; gap: 8px; }
+  .css-project-shortcuts a { padding: 7px 10px; min-height: 40px; }
+  .top .css-project-nav { width: 100%; margin: 0; gap: 4px 14px; }
+  #proekty, #otzyvy, #dogruzka, #project-locations { scroll-margin-top: 112px; }
+}
+
+.css-project-detail--text{grid-template-columns:1fr}

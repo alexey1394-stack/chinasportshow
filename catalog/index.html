@@ -49,6 +49,8 @@ a{color:inherit}
 .ph{display:none;align-items:center;gap:14px;margin:0 0 14px;padding:10px 14px;border:1px solid var(--gold);background:var(--paper-2)}.ph.on{display:flex}.ph img{width:56px;height:56px;object-fit:cover;border:1px solid var(--rule)}.ph b{font-family:var(--f-h);font-size:17px}.ph span{font-size:12.5px;color:var(--graphite)}.ph button{margin-left:auto;font:11px var(--f-m);letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border:1px solid var(--rule);background:transparent;cursor:pointer}
 .card .sim{position:absolute;left:10px;top:10px;font:10.5px var(--f-m);letter-spacing:.08em;padding:3px 7px;background:var(--ink);color:var(--milk)}
 .tel{font-family:var(--f-h);font-size:15px;text-decoration:none;white-space:nowrap}
+.top .works-link{color:var(--paper);font:500 12px var(--f-m);white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;min-height:34px}
+.top .works-link:hover,.top .works-link:focus-visible{color:var(--gold)}
 .top a.back{font-family:var(--f-m);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);text-decoration:none;white-space:nowrap}
 .wrap{max-width:1400px;margin:0 auto;padding:22px 24px 120px;display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:start}
 .side{position:sticky;top:64px;display:grid;gap:22px;align-content:start;max-height:calc(100vh - 64px);overflow-y:auto;overscroll-behavior:contain;padding:0 10px 30px 0;scrollbar-width:thin}
@@ -374,6 +376,7 @@ a{color:inherit}
   <span class="ttl">Каталог · цена в Москве с НДС</span>
   <div class="search"><input id="q" type="search" placeholder="Поиск: дорожка, жим ногами, реформер, артикул…"><button type="button" class="cam" id="byPhoto" title="Загрузите фото тренажёра — покажем похожие" hidden>📷 По фото</button><input id="phFile" type="file" accept="image/*" hidden></div>
   <!--EN--><span class="lng" id="lng"><b>RU</b><i>/</i><a href="/en/catalog/" hreflang="en" lang="en">EN</a></span><script>(function(){var a=document.querySelector("#lng a");if(a)a.addEventListener("click",function(){try{localStorage.setItem("lang","en")}catch(e){}a.href=a.getAttribute("href").split(/[?#]/)[0]+location.search+location.hash;});})();</script><!--/EN--><a class="back" href="../">← Оборудование</a>
+  <a class="works-link" href="/works/">Проекты</a>
   <a class="tel" href="tel:+79157716981">8 (915) 771-69-81</a>
 </div></header>
 
@@ -394,7 +397,6 @@ a{color:inherit}
     <div class="bar"><h1>Каталог</h1><button type="button" class="fltBtn" id="fltBtn">Фильтры <i id="fltN"></i></button><span class="cnt" id="cnt"></span>
       <button type="button" class="share" id="share" title="Скопировать ссылку с этим набором фильтров">Ссылка на фильтр</button><select id="sort"><option value="cat">по категории</option><option value="pa">цена ↑</option><option value="pd">цена ↓</option><option value="nm">по названию</option></select></div>
     <p class="note">Фабрики, с которыми работаем напрямую, — под своими именами. Цены пересчитываются по курсу ЦБ при каждом обновлении каталога. Позиции без хорошего снимка стоят в конце списка — фото пришлём по запросу.</p>
-    <div class="gk-cta" id="gkCta"><div><b>Открываете зал?</b> Соберём стартовый комплект под формат и площадь — с ценой, объёмом и долей контейнера. Любую позицию можно заменить, потом — в подборку и на расчёт.</div><button type="button" id="gkOpen">Я открываю зал</button></div>
     <div class="ph" id="ph"><img id="phImg" alt=""><div><b id="phT">Похожие на ваше фото</b><br><span id="phS"></span></div><button type="button" id="phOff">✕ Сбросить</button></div>
     <div class="pick" id="pick" hidden>
       <div class="t"><b>Relax Fitness</b> — выбор владельца CHINA SPORT SHOW.<br>
@@ -595,7 +597,6 @@ var PHOTO = {url:'https://functions.yandexcloud.net/d4eba59mt1dj9nb3tbm7'};
     $('onlyPrice').addEventListener('change', apply);
     ['onlyVideo', 'onlyGal'].forEach(function (id) { $(id).addEventListener('change', apply); });
     ['rH', 'rS', 'rW'].forEach(function (id) { $(id).addEventListener('input', apply); });
-    $('gkOpen').addEventListener('click', мастерЗала);
     $('sort').addEventListener('change', apply);
     $('more').addEventListener('click', function () { draw(false); });
     // Подборка на КП (слово Алексея 15.10.2026): хранится в браузере клиента,
